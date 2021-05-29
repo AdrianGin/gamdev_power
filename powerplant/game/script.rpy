@@ -6,12 +6,12 @@
 define e = Character("Employee 1")
 image bg black = "#000000"
 image bg white = "#FFFFFF"
+image countdown = DynamicDisplayable(show_countdown)
 
 # The game starts here.
 label start:
     python:
-        initLevels()
-        initPlayer()
+        initGame()
 
   #  jump init_game
     # This shows a character sprite. A placeholder is used, but you can
@@ -21,6 +21,7 @@ label start:
     # show bg black
     show screen change_mode
     show screen user_interface_health
+    #show countdown at Position(xalign=0.5, yalign=0.5)
     #show screen light_mode
    # show eileen happy
 
@@ -34,7 +35,7 @@ label start:
 
     # This ends the game.
 
-    call day1
+    call day1 from _call_day1
 
     return
 
@@ -53,10 +54,10 @@ label day1:
         call screen level1(l1_files, l1_folders)
 
         if _return == Incorrect:
-            call InCorrect
+            call InCorrect from _call_InCorrect
         
         if _return == Correct:
-            call Correct
+            call Correct from _call_Correct
             "Correct!"
 
         if len(l1_files) == 0:
@@ -66,6 +67,7 @@ label day1:
 label end1:
     "Done!"
     return
+
 
 screen user_interface_health():
     frame:
@@ -80,8 +82,13 @@ screen user_interface_health():
             null height 10
             label "Remaining Power"
             bar:
-                value StaticValue(player_data.availablePower, 100)                
+                value StaticValue(player_data.availablePower, 100) 
+
         
+
+label UpdateAvailablePower:
+    $ player_data.availablePower = player_data.availablePower - 1
+    return
 
 screen change_mode():
     default BgCol = 1

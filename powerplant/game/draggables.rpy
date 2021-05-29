@@ -31,11 +31,33 @@ init python:
             self.y = y
             self.type = type
 
+
+    class SoftTimer:
+        def __init__(self, timeout, callback, context):
+            self.timeout = timeout / 50
+            self.counter = 0
+            self.callback = callback
+            self.context = context
+            self.enabled = False
+
+        def Service(self):
+            self.counter = self.counter + 1
+            if self.counter >= self.timeout:
+                self.callback(self.context)
+                self.counter = 0
+
+
 init python:
     const_l1_files = []
     const_l1_folders = []
 
+    timers = []
     player_data = player()
+
+    def initGame():
+        initLevels()
+        initPlayer()
+        initTimers()
 
     def initLevels():
         global const_l1_files
@@ -54,3 +76,26 @@ init python:
     def initPlayer():
         global player_data
         player_data = player()
+
+    def initTimers():
+        global timers
+        global player_data
+        timers.append( SoftTimer(1000, PowerTimerCallback, player_data) )
+
+
+    def PowerTimerCallback(context):
+        #context.availablePower = context.availablePower - 1
+        pass
+
+    def periodic_callback():
+        for i, timer in enumerate(timers):
+            timer.Service()
+
+
+
+    def show_countdown(st, at):
+        if st > 5.0:
+            return Text("0.0"), None
+        else:
+            d = Text("{:.1f}".format(5.0 - st))
+            return d, 0.1
