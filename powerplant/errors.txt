@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 51: window expects a non-empty block.
+    window:
+           ^
+
+Ren'Py Version: Ren'Py 7.4.5.1648
+Sat May 29 13:03:57 2021

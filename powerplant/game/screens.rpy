@@ -121,6 +121,7 @@ screen say(who, what):
 init python:
     config.character_id_prefixes.append('namebox')
 
+
 style window is default
 style say_label is default
 style say_dialogue is default
