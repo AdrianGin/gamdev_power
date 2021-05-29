@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 86: expected statement.
-    Rollback()    
-                  ^
+File "game/script.rpy", line 70: button expects a non-empty block.
+    else:
+         ^
 
 Ren'Py Version: Ren'Py 7.4.5.1648
-Sat May 29 15:51:04 2021
+Sat May 29 16:42:09 2021

@@ -61,13 +61,14 @@ screen change_mode():
         else:
             background "#000000"
 
-        xalign 0.95 yalign 0.95
-
         button:
-            xsize 100
-            ysize 100
+            background "#FFFFFF"
+            xalign 0.95 yalign 0.7
             action [ToggleScreenVariable("BgCol", 1,0)]
-            text _("Change Mode") style "button_text"
+            if BgCol == 0:
+                text _("Light Mode") style "button_text"
+            else:
+                text _("Dark Mode") style "button_text"
 
 
 screen dark_mode:
