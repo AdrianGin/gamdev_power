@@ -7,11 +7,12 @@ define e = Character("Employee 1")
 image bg black = "#000000"
 image bg white = "#FFFFFF"
 
-default Mode = 0
-
 # The game starts here.
 label start:
+    python:
+        initLevels()
 
+  #  jump init_game
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
@@ -36,18 +37,30 @@ label start:
     return
 
 
-label hello_world:
-    scene bg club
-    e "We at club"
+label init_game:
+    python:
+        File1 = item_location(0, 300,300, "file white.png")
+        Folder1 = item_location(0, 200,120, "folder white.png")
+
+        File2 = item_location(1, 300,100, "file t2.png")
+        Folder2 = item_location(1, 200,350, "folder t2.png")
+
+        l1_files = [File1, File2]
+        l2_folders = [Folder1, Folder2]
     return
 
 
 label day1:
+    
     "Please organise these folders"
    # screen button_example
-    call screen send_detective_screen
+    default day1Complete = False
 
-    "Okay, we'll send [detective] to [city]."
+    while day1Complete == False:
+        call screen level1(l1_files, l2_folders)
+        $ day1Complete = _return
+    
+    "Done!"
 
 screen change_mode():
     default BgCol = 1
@@ -70,81 +83,5 @@ screen change_mode():
             else:
                 text _("Dark Mode") style "button_text"
 
-
-screen dark_mode:
-    modal False
-    frame:
-        modal False
-        xfill True
-        yfill True
-        align (0.5, 0.5)
-        background Solid("#000000")
-
-        button:
-            action Call("ChangeMode")
-            text _("Mode Change") style "button_text"
-
-label ChangeMode:
-    if Mode == 0:
-        $ Mode = 1 
-    else:
-        $ Mode = 0 
-  
-    return
-
-screen light_mode:
-    modal False
-    frame:
-        modal False
-        xfill True
-        yfill True
-        align (0.5, 0.5)
-        background Solid("#FFFFFF")        
-
-        button:
-            action ToggleScreen("light_mode")
-            text _("Mode Change") style "button_text"
-
-screen button_example():
-    frame:
-        xalign 0.5 ypos 50
-        button:
-            action ToggleScreen("light_mode")
-            text _("Click me.") style "button_text"
-
-
-
         
-
-screen send_detective_screen:
-
-    # A drag group ensures that the detectives and the cities can be
-    # dragged to each other.
-    draggroup:
-
-        # Our detectives.
-        drag:
-            drag_name "Ivy"
-            child "sylvie green smile.png"
-            droppable False
-            dragged detective_dragged
-            xpos 100 ypos 100
-        drag:
-            drag_name "Zack"
-            child "File.png"
-            droppable False
-            dragged detective_dragged
-            xpos 150 ypos 100
-
-        # The cities they can go to.
-        drag:
-            drag_name "London"
-            child "Folder1.png"
-            draggable False
-            xpos 450 ypos 140
-        drag:
-            drag_name "Paris"
-            draggable False
-            child "Folder1.png"
-            xpos 500 ypos 280
 

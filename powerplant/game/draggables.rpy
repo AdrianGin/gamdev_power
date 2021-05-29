@@ -1,35 +1,37 @@
-screen test:
-
-    drag:
-        drag_name "say"
-        yalign 1.0
-        drag_handle (0, 0, 1.0, 30)
-
-        xalign 0.5
-
-        window id "window":
-            # Ensure that the window is smaller than the screen.
-            xmaximum 600
-
-            has vbox
-
-            if who:
-                text who id "who"
-
-            text what id "what"
-
-
-
-screen hello_world():
-    text "Hello, World."
-
-
 init python:
     def detective_dragged(drags, drop):
         if not drop:
             return
 
-        store.detective = drags[0].drag_name
-        store.city = drop.drag_name
+        l1_files.remove(drags[0].drag_name)
+        if len(l1_files) == 0:
+            return True
+    
 
-        return True
+        return False
+
+
+    class item_location:
+        def __init__(self, id, x, y, type):
+            self.id = id
+            self.x = x
+            self.y = y
+            self.type = type
+
+init python:
+    l1_files = []
+    l2_folders = []
+
+    def initLevels():
+        global l1_files
+        global l2_folders
+
+        File1 = item_location(0, 300,300, "file white.png")
+        Folder1 = item_location(0, 200,120, "folder white.png")
+
+        File2 = item_location(1, 300,100, "file t2.png")
+        Folder2 = item_location(1, 200,350, "folder t2.png")
+
+        l1_files = [File1, File2]
+        l2_folders = [Folder1, Folder2]
+        return

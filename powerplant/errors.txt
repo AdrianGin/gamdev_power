@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 70: button expects a non-empty block.
-    else:
-         ^
+File "game/script.rpy", line 60: expected statement.
+    day1Complete = _return
+                 ^
 
 Ren'Py Version: Ren'Py 7.4.5.1648
-Sat May 29 16:42:09 2021
+Sat May 29 18:12:16 2021

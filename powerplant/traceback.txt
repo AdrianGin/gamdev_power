@@ -1,14 +1,14 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 50, in script
+  File "game/script.rpy", line 63, in script
     "Okay, we'll send [detective] to [city]."
 KeyError: u'detective'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 50, in script
+  File "game/script.rpy", line 63, in script
     "Okay, we'll send [detective] to [city]."
   File "renpy/ast.py", line 715, in execute
     renpy.exports.say(who, what, *args, **kwargs)
@@ -31,4 +31,4 @@ KeyError: u'detective'
 Windows-10-10.0.19041
 Ren'Py 7.4.5.1648
 powerplant 1.0
-Sat May 29 16:31:39 2021
+Sat May 29 18:14:38 2021
