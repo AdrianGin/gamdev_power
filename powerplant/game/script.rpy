@@ -26,12 +26,9 @@ label start:
    # show eileen happy
 
     # These display lines of dialogue.
+    call day1Intro
 
-    e "Welcome to your first day at the power plant"
 
-    e "To save power, we implemented light and dark mode."
-
-    e "Now get to work!"
 
     # This ends the game.
 
@@ -39,10 +36,23 @@ label start:
 
     return
 
+label day1Intro:
+    play music ["audio/Audio_M_01_State01_Loop.wav",
+     "audio/Audio_M_01_State02_Loop.wav", "audio/Audio_M_01_State03_Loop.wav",
+      "audio/Audio_M_01_State04_Loop.wav", "audio/Audio_M_01_State05_Loop.wav", "audio/Audio_M_01_State06_Loop.wav"] fadeout 4.0 fadein 4.0
+    
+    e "Welcome to your first day at the power plant"
 
+    e "To save power, we implemented light and dark mode."
+
+    e "Now get to work!"
+
+    return
 
 label day1:
     
+
+
     "Please organise these folders"
    # screen button_example
     default day1Complete = False

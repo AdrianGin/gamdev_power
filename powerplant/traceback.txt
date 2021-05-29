@@ -1,33 +1,19 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 30, in script
-    e "Welcome to your first day at the power plant"
-  File "game/script.rpy", line 30, in script
-    e "Welcome to your first day at the power plant"
-  File "game/draggables.rpy", line 110, in periodic_callback
-    timer.Service()
-  File "game/draggables.rpy", line 51, in Service
-    self.callback(self.context)
-  File "game/draggables.rpy", line 105, in PowerTimerCallback
-    ui.interact()
-Exception: Cannot start an interaction in the middle of an interaction, without creating a new context.
+  File "game/script.rpy", line 38, in script call
+    call day1 from _call_day1
+  File "game/script.rpy", line 48, in script
+    "Please organise these folders"
+IOError: Couldn't find file 'audio/Audio_M_01_State01_Loop.wavaudio/Audio_M_01_State02_Loop.wavaudio/Audio_M_01_State03_Loop.wavaudio/Audio_M_01_State04_Loop.wavaudio/Audio_M_01_State05_Loop.wavaudio/Audio_M_01_State06_Loop.wav'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 326, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 617, in main
-    run(restart)
-  File "renpy/main.py", line 148, in run
-    renpy.execution.run_context(True)
-  File "renpy/execution.py", line 922, in run_context
-    context.run()
-  File "game/script.rpy", line 30, in script
-    e "Welcome to your first day at the power plant"
-  File "game/script.rpy", line 30, in script
-    e "Welcome to your first day at the power plant"
+  File "game/script.rpy", line 38, in script call
+    call day1 from _call_day1
+  File "game/script.rpy", line 48, in script
+    "Please organise these folders"
   File "renpy/ast.py", line 715, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "renpy/exports.py", line 1417, in say
@@ -42,21 +28,23 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "renpy/display/core.py", line 3213, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3913, in interact_core
-    i()
-  File "game/draggables.rpy", line 110, in periodic_callback
-    timer.Service()
-  File "game/draggables.rpy", line 51, in Service
-    self.callback(self.context)
-  File "game/draggables.rpy", line 105, in PowerTimerCallback
-    ui.interact()
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3189, in interact
-    raise Exception("Cannot start an interaction in the middle of an interaction, without creating a new context.")
-Exception: Cannot start an interaction in the middle of an interaction, without creating a new context.
+  File "renpy/display/core.py", line 3915, in interact_core
+    renpy.audio.audio.periodic()
+  File "renpy/audio/audio.py", line 1126, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1104, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1046, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 505, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'audio/Audio_M_01_State01_Loop.wavaudio/Audio_M_01_State02_Loop.wavaudio/Audio_M_01_State03_Loop.wavaudio/Audio_M_01_State04_Loop.wavaudio/Audio_M_01_State05_Loop.wavaudio/Audio_M_01_State06_Loop.wav'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.5.1648
 powerplant 1.0
-Sat May 29 23:45:02 2021
+Sun May 30 00:10:20 2021
