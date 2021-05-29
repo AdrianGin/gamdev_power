@@ -99,3 +99,7 @@ init python:
         else:
             d = Text("{:.1f}".format(5.0 - st))
             return d, 0.1
+
+    def SetLightMode():
+        player_data.isLightMode = not player_data.isLightMode
+        renpy.play("audio/Audio_SFX_UI_Select_01.wav")

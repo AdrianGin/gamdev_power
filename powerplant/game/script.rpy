@@ -105,21 +105,13 @@ screen change_mode():
         button:
             background "#FFFFFF"
             xalign 0.95 yalign 0.7
-            action [Call("SetLightMode", BgCol)]
+            action [Function(SetLightMode)]
             if player_data.isLightMode == True:
                 text _("Light Mode") style "button_text"
             else:
                 text _("Dark Mode") style "button_text"
 
-label SetLightMode(currentLightMode):
-    play sound "audio/Audio_SFX_UI_Select_01.wav"
-    $ player_data.isLightMode = not player_data.isLightMode
-    return
 
-
-label EnterLightMode():
-    play sound "audio/Audio_SFX_UI_Select_01.wav"
-    return
 
 label InCorrect():
     play sound "audio/Audio_SFX_UI_Incorrect_01.wav"
