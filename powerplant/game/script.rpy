@@ -50,9 +50,10 @@ label day1:
     while day1Complete == False:
         call screen level1(l1_files, l1_folders)
         if _return == Incorrect:
-            "BAD"
+            play sound "audio/Audio_SFX_UI_Incorrect_01.wav"
         
         if _return == Correct:
+            play sound "audio/Audio_SFX_UI_Correct_01.wav"
             "Correct!"
 
         if len(l1_files) == 0:

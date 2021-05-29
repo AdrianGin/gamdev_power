@@ -1,34 +1,50 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/draggables.rpy", line 1, in script
-    init python:
-  File "game/draggables.rpy", line 1, in script
-    init python:
-  File "game/draggables.rpy", line 2, in <module>
-    from enum import Enum
-ImportError: No module named enum
+  File "game/script.rpy", line 51, in script
+    call screen level1(l1_files, l1_folders)
+  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
+    _window_hide(auto=True)
+  File "renpy/common/000window.rpy", line 101, in _window_hide
+    renpy.with_statement(trans)
+IOError: Couldn't find file 'Audio_SFX_UI_Correct_01.wav'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/bootstrap.py", line 326, in bootstrap
-    renpy.main.main()
-  File "renpy/main.py", line 515, in main
-    renpy.game.context().run(node)
-  File "game/draggables.rpy", line 1, in script
-    init python:
-  File "game/draggables.rpy", line 1, in script
-    init python:
-  File "renpy/ast.py", line 922, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2218, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/draggables.rpy", line 2, in <module>
-    from enum import Enum
-ImportError: No module named enum
+  File "game/script.rpy", line 51, in script
+    call screen level1(l1_files, l1_folders)
+  File "renpy/ast.py", line 1967, in execute
+    statement_name(self.get_name())
+  File "renpy/ast.py", line 46, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
+    _window_hide(auto=True)
+  File "renpy/common/000window.rpy", line 101, in _window_hide
+    renpy.with_statement(trans)
+  File "renpy/exports.py", line 1682, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "renpy/display/core.py", line 2663, in do_with
+    clear=clear)
+  File "renpy/display/core.py", line 3213, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "renpy/display/core.py", line 3915, in interact_core
+    renpy.audio.audio.periodic()
+  File "renpy/audio/audio.py", line 1126, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1104, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1046, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 505, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "renpy/audio/audio.py", line 69, in load
+    rv = renpy.loader.load(fn)
+  File "renpy/loader.py", line 798, in load
+    raise IOError("Couldn't find file '%s'." % name)
+IOError: Couldn't find file 'Audio_SFX_UI_Correct_01.wav'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.5.1648
 powerplant 1.0
-Sat May 29 20:07:08 2021
+Sat May 29 21:20:45 2021

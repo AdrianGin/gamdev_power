@@ -11,8 +11,6 @@ init python:
             return Incorrect
 
         drags[0].drag_name.item_list.remove(drags[0].drag_name.item)
-        if len(drags[0].drag_name.item_list) == 0:
-            return Completed
         return Correct
 
     class player:
