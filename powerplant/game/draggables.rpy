@@ -5,7 +5,7 @@ init python:
 
     def detective_dragged(drags, drop):
         if not drop:
-            return
+            return None
 
         if drags[0].drag_name.item.id != drop.drag_name.item.id:
             return Incorrect
@@ -35,6 +35,8 @@ init python:
     const_l1_files = []
     const_l1_folders = []
 
+    player_data = player()
+
     def initLevels():
         global const_l1_files
         global const_l1_folders
@@ -47,9 +49,8 @@ init python:
 
         const_l1_files = [File1, File2]
         const_l1_folders = [Folder1, Folder2]
-
-
-
-
-
         return
+
+    def initPlayer():
+        global player_data
+        player_data = player()

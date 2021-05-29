@@ -11,6 +11,7 @@ image bg white = "#FFFFFF"
 label start:
     python:
         initLevels()
+        initPlayer()
 
   #  jump init_game
     # This shows a character sprite. A placeholder is used, but you can
@@ -19,6 +20,7 @@ label start:
  
     # show bg black
     show screen change_mode
+    show screen user_interface_health
     #show screen light_mode
    # show eileen happy
 
@@ -32,7 +34,7 @@ label start:
 
     # This ends the game.
 
-    jump day1
+    call day1
 
     return
 
@@ -49,17 +51,37 @@ label day1:
 
     while day1Complete == False:
         call screen level1(l1_files, l1_folders)
+
         if _return == Incorrect:
-            play sound "audio/Audio_SFX_UI_Incorrect_01.wav"
+            call InCorrect
         
         if _return == Correct:
-            play sound "audio/Audio_SFX_UI_Correct_01.wav"
+            call Correct
             "Correct!"
 
         if len(l1_files) == 0:
             $ day1Complete = _return
+            jump end1
     
+label end1:
     "Done!"
+    return
+
+screen user_interface_health():
+    frame:
+        xalign 0.0 yalign 0.0
+        xsize 200
+        background "#FFFFFF00"
+        vbox:
+            spacing 0
+            label "Meltdown Risk"
+            bar:
+                value StaticValue(player_data.meltdownLevel, 100)
+            null height 10
+            label "Remaining Power"
+            bar:
+                value StaticValue(player_data.availablePower, 100)                
+        
 
 screen change_mode():
     default BgCol = 1
@@ -68,7 +90,7 @@ screen change_mode():
         yfill True
         xfill True
 
-        if BgCol == 1:
+        if player_data.isLightMode == True:
             background "#FFFFFF"
         else:
             background "#000000"
@@ -76,11 +98,27 @@ screen change_mode():
         button:
             background "#FFFFFF"
             xalign 0.95 yalign 0.7
-            action [ToggleScreenVariable("BgCol", 1,0)]
-            if BgCol == 0:
+            action [Call("SetLightMode", BgCol)]
+            if player_data.isLightMode == True:
                 text _("Light Mode") style "button_text"
             else:
                 text _("Dark Mode") style "button_text"
 
-        
+label SetLightMode(currentLightMode):
+    play sound "audio/Audio_SFX_UI_Select_01.wav"
+    $ player_data.isLightMode = not player_data.isLightMode
+    return
 
+
+label EnterLightMode():
+    play sound "audio/Audio_SFX_UI_Select_01.wav"
+    return
+
+label InCorrect():
+    play sound "audio/Audio_SFX_UI_Incorrect_01.wav"
+    $ player_data.meltdownLevel = player_data.meltdownLevel + 5
+    return
+
+label Correct():
+    play sound "audio/Audio_SFX_UI_Correct_01.wav"
+    return
