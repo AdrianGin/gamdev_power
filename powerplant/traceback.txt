@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 49, in script
+  File "game/script.rpy", line 44, in script
     call screen button_example
   File "renpy/common/000statements.rpy", line 569, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/script.rpy", line 59, in execute
+  File "game/script.rpy", line 56, in execute
     screen button_example():
-  File "game/script.rpy", line 59, in execute
+  File "game/script.rpy", line 56, in execute
     screen button_example():
-  File "game/script.rpy", line 60, in execute
+  File "game/script.rpy", line 57, in execute
     frame:
-  File "game/script.rpy", line 62, in execute
+  File "game/script.rpy", line 59, in execute
     button:
-  File "game/script.rpy", line 62, in keywords
+  File "game/script.rpy", line 59, in keywords
     button:
-  File "game/script.rpy", line 63, in <module>
+  File "game/script.rpy", line 60, in <module>
     action ToggleScreen(dark_mode)
 NameError: name 'dark_mode' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 49, in script
+  File "game/script.rpy", line 44, in script
     call screen button_example
   File "renpy/ast.py", line 1969, in execute
     self.call("execute")
@@ -54,21 +54,21 @@ Full traceback:
     self.update()
   File "renpy/display/screen.py", line 631, in update
     self.screen.function(**self.scope)
-  File "game/script.rpy", line 59, in execute
+  File "game/script.rpy", line 56, in execute
     screen button_example():
-  File "game/script.rpy", line 59, in execute
+  File "game/script.rpy", line 56, in execute
     screen button_example():
-  File "game/script.rpy", line 60, in execute
+  File "game/script.rpy", line 57, in execute
     frame:
-  File "game/script.rpy", line 62, in execute
+  File "game/script.rpy", line 59, in execute
     button:
-  File "game/script.rpy", line 62, in keywords
+  File "game/script.rpy", line 59, in keywords
     button:
-  File "game/script.rpy", line 63, in <module>
+  File "game/script.rpy", line 60, in <module>
     action ToggleScreen(dark_mode)
 NameError: name 'dark_mode' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.5.1648
 powerplant 1.0
-Sat May 29 12:58:51 2021
+Sat May 29 13:07:55 2021

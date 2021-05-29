@@ -1,4 +1,4 @@
-Sat May 29 13:05:12 2021
+Sat May 29 13:19:46 2021
 Windows-10-10.0.19041
 Ren'Py 7.4.5.1648
  
@@ -6,12 +6,12 @@ Ren'Py 7.4.5.1648
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.03s
+Loading error handling took 0.02s
 Loading script took 0.16s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.05s
+Running init code took 0.04s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -34,7 +34,7 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
-Interface start took 1.42s
+Interface start took 1.43s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3840, 2160)
@@ -46,9 +46,9 @@ Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1512, 851) drawable=(1512, 851)
 Maximum texture size: 4096x4096
-Total time until interface ready: 2.50201511383s
+Total time until interface ready: 2.51709413528s
 Resetting cache.
-Bootstrap to the start of init.init took 11.47s
+Bootstrap to the start of init.init took 46.28s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.02s
@@ -74,7 +74,7 @@ Init translation took 0.04s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.06s
+Save screen analysis took 0.05s
 Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.01s
@@ -92,9 +92,16 @@ Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1512, 851) drawable=(1512, 851)
 Maximum texture size: 4096x4096
-Total time until interface ready: 12.0468540192s
+Total time until interface ready: 46.8601441383s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
 Resetting cache.
-Bootstrap to the start of init.init took 20.75s
+Bootstrap to the start of init.init took 73.65s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.01s
@@ -107,7 +114,7 @@ Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
-Dump and make backups. took 0.06s
+Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.04s
@@ -117,7 +124,171 @@ nvdrs: 'Initialize() = -6.' (can be ignored)
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.04s
-Build styles took 0.01s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.06s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.10s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'ATI Technologies Inc.'
+Renderer: 'Radeon RX 570 Series'
+Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1512, 851) drawable=(1512, 851)
+Maximum texture size: 4096x4096
+Total time until interface ready: 74.3157839775s
+Resetting cache.
+Bootstrap to the start of init.init took 82.90s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.08s
+Loading save slot metadata. took 0.01s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 61: indentation mismatch.
+DPI scale factor: 1.750000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: 'Initialize() = -6.' (can be ignored)
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'ATI Technologies Inc.'
+Renderer: 'Radeon RX 570 Series'
+Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1512, 851) drawable=(1512, 851)
+Maximum texture size: 4096x4096
+Total time until interface ready: 83.1418390274s
+Resetting cache.
+Bootstrap to the start of init.init took 84.50s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.08s
+Loading save slot metadata. took 0.01s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.04s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.03s
+DPI scale factor: 1.750000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: 'Initialize() = -6.' (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.05s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.11s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'ATI Technologies Inc.'
+Renderer: 'Radeon RX 570 Series'
+Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1512, 851) drawable=(1512, 851)
+Maximum texture size: 4096x4096
+Total time until interface ready: 85.1620030403s
+Resetting cache.
+Bootstrap to the start of init.init took 89.31s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.08s
+Loading save slot metadata. took 0.01s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.03s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.750000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: 'Initialize() = -6.' (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.05s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.10s
+Save bytecode. took 0.01s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.04s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'ATI Technologies Inc.'
+Renderer: 'Radeon RX 570 Series'
+Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
+Display Info: None
+Screen sizes: virtual=(1280, 720) physical=(1512, 851) drawable=(1512, 851)
+Maximum texture size: 4096x4096
+Total time until interface ready: 89.9599270821s
+Resetting cache.
+Bootstrap to the start of init.init took 91.05s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.01s
+Loading script took 0.08s
+Loading save slot metadata. took 0.01s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.03s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
+Dump and make backups. took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.750000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: 'Initialize() = -6.' (can be ignored)
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.04s
+Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.05s
@@ -138,4 +309,4 @@ Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1512, 851) drawable=(1512, 851)
 Maximum texture size: 4096x4096
-Total time until interface ready: 21.3154089451s
+Total time until interface ready: 91.6050441265s

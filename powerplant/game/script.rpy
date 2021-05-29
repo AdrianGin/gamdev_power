@@ -13,9 +13,11 @@ label start:
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
+ 
+    image bg black = "#000000"
+    show bg black
 
-    call screen dark_mode
-
+    show screen dark_mode
     show eileen happy
 
     # These display lines of dialogue.
@@ -41,23 +43,42 @@ label hello_world:
 
 label day1:
     "Please organise these folders"
-    call screen button_example
+   # screen button_example
     call screen send_detective_screen
 
     "Okay, we'll send [detective] to [city]."
 
 screen dark_mode:
+    modal False
     frame:
-        window:
-            align (0.5, 0.5)
-            background Solid("#FFFFFF")
+        modal False
+        xfill True
+        yfill True
+        align (0.5, 0.5)
+        background Solid("#000000")
 
+        button:
+            action ToggleScreen("light_mode")
+            text _("Click me.") style "button_text"
+
+screen light_mode:
+    modal False
+    frame:
+        modal False
+        xfill True
+        yfill True
+        align (0.5, 0.5)
+        background Solid("#FFFFFF")        
+
+        button:
+            action ToggleScreen("light_mode")
+            text _("Click me.") style "button_text"
 
 screen button_example():
     frame:
         xalign 0.5 ypos 50
         button:
-            #action ToggleScreen(dark_mode)
+            action ToggleScreen("light_mode")
             text _("Click me.") style "button_text"
 
 
