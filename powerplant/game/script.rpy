@@ -4,21 +4,22 @@
 # name of the character.
 
 define e = Character("Employee 1")
+image bg black = "#000000"
+image bg white = "#FFFFFF"
 
+default Mode = 0
 
 # The game starts here.
-
 label start:
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
  
-    image bg black = "#000000"
     show bg black
-
-    show screen dark_mode
-    show eileen happy
+    show screen change_mode
+    #show screen light_mode
+   # show eileen happy
 
     # These display lines of dialogue.
 
@@ -48,6 +49,15 @@ label day1:
 
     "Okay, we'll send [detective] to [city]."
 
+screen change_mode:
+    frame:
+        button:
+            action Call("ChangeMode")
+            if Mode == 0:
+                text _("Light Mode") style "button_text"
+            else:
+                text _("Dark Mode") style "button_text"
+
 screen dark_mode:
     modal False
     frame:
@@ -58,8 +68,17 @@ screen dark_mode:
         background Solid("#000000")
 
         button:
-            action ToggleScreen("light_mode")
-            text _("Click me.") style "button_text"
+            action Call("ChangeMode")
+            text _("Mode Change") style "button_text"
+
+label ChangeMode:
+    if Mode == 0:
+        show bg white
+        $ Mode = 1
+    else:
+        show bg black
+        $ Mode = 0
+    return
 
 screen light_mode:
     modal False
@@ -72,7 +91,7 @@ screen light_mode:
 
         button:
             action ToggleScreen("light_mode")
-            text _("Click me.") style "button_text"
+            text _("Mode Change") style "button_text"
 
 screen button_example():
     frame:

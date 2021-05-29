@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 61: indentation mismatch.
+File "game/script.rpy", line 53: frame expects a non-empty block.
+    frame:
+          ^
 
 Ren'Py Version: Ren'Py 7.4.5.1648
-Sat May 29 13:21:09 2021
+Sat May 29 14:47:49 2021
