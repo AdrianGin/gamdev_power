@@ -4,6 +4,10 @@ init python:
     Completed = 2
 
     def detective_dragged(drags, drop):
+
+        objectIndex = drags[0].drag_name.item_list.index(drags[0].drag_name.item)
+        drags[0].drag_name.item_list[objectIndex].x = drags[0].x
+        drags[0].drag_name.item_list[objectIndex].y = drags[0].y
         if not drop:
             return None
 
@@ -25,11 +29,12 @@ init python:
             self.item_list = item_list
 
     class item_location:
-        def __init__(self, id, x, y, type):
+        def __init__(self, id, x, y, type, name = ""):
             self.id = id
             self.x = x
             self.y = y
             self.type = type
+            self.name = name
 
 
     class SoftTimer:
@@ -60,18 +65,23 @@ init python:
         initTimers()
 
     def initLevels():
+
+        initLevel1()
+
+        return
+
+    def initLevel1():
         global const_l1_files
         global const_l1_folders
+        const_l1_files.clear()
+        const_l1_folders.clear()
 
-        File1 = item_location(0, 300,300, "file white.png")
-        Folder1 = item_location(0, 200,120, "folder white.png")
+        const_l1_files.append( item_location(0, 300,300, "file white.png") )
+        const_l1_files.append( item_location(0, 300,100, "file t2.png") )
 
-        File2 = item_location(1, 300,100, "file t2.png")
-        Folder2 = item_location(1, 200,350, "folder t2.png")
-
-        const_l1_files = [File1, File2]
-        const_l1_folders = [Folder1, Folder2]
-        return
+        const_l1_folders.append( item_location(0, 51,62, "folder t2.png") )
+        const_l1_folders.append( item_location(1, 100,62, "folder white.png") )
+        #const_l1_files.append(  )
 
     def initPlayer():
         global player_data
@@ -92,12 +102,11 @@ init python:
             timer.Service()
 
 
-
     def show_countdown(st, at):
         if st > 5.0:
-            return Text("0.0"), None
+            return Text("0.0", color="#f00"), 0.1
         else:
-            d = Text("{:.1f}".format(5.0 - st))
+            d = Text("{:.1f}".format(5.0 - st), color="#f00")
             return d, 0.1
 
     def SetLightMode():

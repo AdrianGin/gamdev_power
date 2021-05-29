@@ -21,7 +21,7 @@ label start:
     # show bg black
     show screen change_mode
     show screen user_interface_health
-    #show countdown at Position(xalign=0.5, yalign=0.5)
+    
     #show screen light_mode
    # show eileen happy
 
@@ -35,7 +35,7 @@ label start:
 
     # This ends the game.
 
-    call day1 from _call_day1
+    call day1
 
     return
 
@@ -71,7 +71,7 @@ label end1:
 
 screen user_interface_health():
     frame:
-        xalign 0.0 yalign 0.0
+        xalign 0.8 yalign 0.8
         xsize 200
         background "#FFFFFF00"
         vbox:
