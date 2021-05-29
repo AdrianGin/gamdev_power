@@ -35,7 +35,7 @@ label start:
 
     # This ends the game.
 
-    call day1
+    call day1 from _call_day1
 
     return
 

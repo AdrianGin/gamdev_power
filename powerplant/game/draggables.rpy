@@ -76,12 +76,19 @@ init python:
         const_l1_files.clear()
         const_l1_folders.clear()
 
-        const_l1_files.append( item_location(0, 300,300, "file white.png") )
-        const_l1_files.append( item_location(0, 300,100, "file t2.png") )
+        const_l1_folders.append( item_location(0, 51,62, "Folder-Admin.png") )
+        const_l1_folders.append( item_location(1, 155,62, "Folder-PlantData.png") )
 
-        const_l1_folders.append( item_location(0, 51,62, "folder t2.png") )
-        const_l1_folders.append( item_location(1, 100,62, "folder white.png") )
-        #const_l1_files.append(  )
+        const_l1_files.append( item_location(0, 239,234, "File-DocumentM1D.png") )
+        const_l1_files.append( item_location(0, 426,114, "File-CalendarDL.png") )
+        const_l1_files.append( item_location(0, 492,338, "File-DocumentLL.png") )
+        const_l1_files.append( item_location(0, 649,409, "File-CalendarM1L.png") )
+
+        const_l1_files.append( item_location(1, 553,179, "File-GraphM1L.png") )
+        const_l1_files.append( item_location(1, 632,90, "File-GraphLL.png") )
+        const_l1_files.append( item_location(1, 729,134, "File-GraphM1L.png") )
+        const_l1_files.append( item_location(1, 680,242, "File-GraphM1L.png") )
+
 
     def initPlayer():
         global player_data
