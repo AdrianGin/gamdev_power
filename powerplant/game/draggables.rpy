@@ -97,11 +97,12 @@ init python:
     def initTimers():
         global timers
         global player_data
-        timers.append( SoftTimer(1000, PowerTimerCallback, player_data) )
+        #timers.append( SoftTimer(100, PowerTimerCallback, player_data) )
 
 
     def PowerTimerCallback(context):
-        #context.availablePower = context.availablePower - 1
+        if context.isLightMode == True:
+            context.availablePower = context.availablePower - 1
         pass
 
     def periodic_callback():

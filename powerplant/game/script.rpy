@@ -69,6 +69,7 @@ label end1:
     return
 
 
+
 screen user_interface_health():
     frame:
         xalign 0.8 yalign 0.8
@@ -84,7 +85,7 @@ screen user_interface_health():
             bar:
                 value StaticValue(player_data.availablePower, 100) 
 
-        
+            timer 0.1 action Function(PowerTimerCallback, player_data) repeat True
 
 label UpdateAvailablePower:
     $ player_data.availablePower = player_data.availablePower - 1
@@ -97,7 +98,7 @@ screen change_mode():
         yfill True
         xfill True
 
-        if player_data.isLightMode == True:
+        if player_data.isLightMode == True and player_data.availablePower > 0:
             background "#FFFFFF"
         else:
             background "#000000"
