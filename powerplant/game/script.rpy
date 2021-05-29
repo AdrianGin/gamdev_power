@@ -16,7 +16,7 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
  
-    show bg black
+    # show bg black
     show screen change_mode
     #show screen light_mode
    # show eileen happy
@@ -49,14 +49,26 @@ label day1:
 
     "Okay, we'll send [detective] to [city]."
 
-screen change_mode:
+screen change_mode():
+    default BgCol = 1
+    zorder 0
     frame:
+        yfill True
+        xfill True
+
+        if BgCol == 1:
+            background "#FFFFFF"
+        else:
+            background "#000000"
+
+        xalign 0.95 yalign 0.95
+
         button:
-            action Call("ChangeMode")
-            if Mode == 0:
-                text _("Light Mode") style "button_text"
-            else:
-                text _("Dark Mode") style "button_text"
+            xsize 100
+            ysize 100
+            action [ToggleScreenVariable("BgCol", 1,0)]
+            text _("Change Mode") style "button_text"
+
 
 screen dark_mode:
     modal False
@@ -73,11 +85,10 @@ screen dark_mode:
 
 label ChangeMode:
     if Mode == 0:
-        show bg white
-        $ Mode = 1
+        $ Mode = 1 
     else:
-        show bg black
-        $ Mode = 0
+        $ Mode = 0 
+  
     return
 
 screen light_mode:

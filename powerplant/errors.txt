@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 53: frame expects a non-empty block.
-    frame:
-          ^
+File "game/script.rpy", line 86: expected statement.
+    Rollback()    
+                  ^
 
 Ren'Py Version: Ren'Py 7.4.5.1648
-Sat May 29 14:47:49 2021
+Sat May 29 15:51:04 2021
