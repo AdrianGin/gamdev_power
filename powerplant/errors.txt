@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 60: expected statement.
-    day1Complete = _return
-                 ^
+File "game/draggables.rpy", line 2: invalid syntax
+    $ Incorrect = 0
+     ^
+    
 
 Ren'Py Version: Ren'Py 7.4.5.1648
-Sat May 29 18:12:16 2021
+Sat May 29 20:09:22 2021

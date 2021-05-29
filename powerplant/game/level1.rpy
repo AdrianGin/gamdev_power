@@ -6,10 +6,12 @@ screen level1(files, folders):
     draggroup:
 
         for i, file in enumerate(files):
+
+            $ fileContext = drag_context(file, files)
+
             drag:
-                
                 drag_handle (0, 0, 1.0, 1.0)
-                drag_name file
+                drag_name fileContext
                 child file.type
                 droppable False
                 dragged detective_dragged
@@ -17,10 +19,11 @@ screen level1(files, folders):
 
         #Folders
         for i, folder in enumerate(folders):
-                drag:
-                    drag_name folder.id
-                    child folder.type
-                    draggable True
-                    xpos folder.x ypos folder.y
+            $ fileContext = drag_context(folder, folders)
+            drag:
+                drag_name fileContext
+                child folder.type
+                draggable True
+                xpos folder.x ypos folder.y
 
       

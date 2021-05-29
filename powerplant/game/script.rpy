@@ -37,18 +37,6 @@ label start:
     return
 
 
-label init_game:
-    python:
-        File1 = item_location(0, 300,300, "file white.png")
-        Folder1 = item_location(0, 200,120, "folder white.png")
-
-        File2 = item_location(1, 300,100, "file t2.png")
-        Folder2 = item_location(1, 200,350, "folder t2.png")
-
-        l1_files = [File1, File2]
-        l2_folders = [Folder1, Folder2]
-    return
-
 
 label day1:
     
@@ -56,9 +44,19 @@ label day1:
    # screen button_example
     default day1Complete = False
 
+    $ l1_files = const_l1_files
+    $ l1_folders = const_l1_folders
+
     while day1Complete == False:
-        call screen level1(l1_files, l2_folders)
-        $ day1Complete = _return
+        call screen level1(l1_files, l1_folders)
+        if _return == Incorrect:
+            "BAD"
+        
+        if _return == Correct:
+            "Correct!"
+
+        if len(l1_files) == 0:
+            $ day1Complete = _return
     
     "Done!"
 

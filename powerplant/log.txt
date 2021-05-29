@@ -1,4 +1,4 @@
-Sat May 29 18:12:41 2021
+Sat May 29 20:09:22 2021
 Windows-10-10.0.19041
 Ren'Py 7.4.5.1648
  
@@ -7,35 +7,18 @@ Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.14s
+Loading script took 0.15s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.04s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
-Dump and make backups. took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.02s
+
+File "game/draggables.rpy", line 2: invalid syntax
+    $ Incorrect = 0
+     ^
+    
 DPI scale factor: 1.750000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: 'Initialize() = -6.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.04s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.05s
-Prepare screens took 0.06s
-Save pyanalysis. took 0.07s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Performance test:
-Interface start took 1.39s
+Interface start took 1.38s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3840, 2160)
@@ -47,67 +30,17 @@ Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
 Display Info: None
 Screen sizes: virtual=(1024, 768) physical=(1792, 1344) drawable=(1792, 1344)
 Maximum texture size: 4096x4096
-Total time until interface ready: 2.53292894363s
-
-Full traceback:
-  File "game/script.rpy", line 60, in script
-    call screen level1(l1_files, l2_folders)
-  File "renpy/ast.py", line 1969, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 1957, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/exports.py", line 3057, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3213, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 4037, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/screen.py", line 720, in event
-    rv = self.child.event(ev, x, y, st)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/dragdrop.py", line 860, in event
-    return super(DragGroup, self).event(ev, x, y, st)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/dragdrop.py", line 733, in event
-    rv = run(drag.dragged, joined, drop)
-  File "renpy/display/behavior.py", line 329, in run
-    return action(*args, **kwargs)
-  File "game/draggables.rpy", line 7, in detective_dragged
-    if l1_files.count() == 0:
-TypeError: count() takes exactly one argument (0 given)
-
-While running game code:
-  File "game/script.rpy", line 60, in script
-    call screen level1(l1_files, l2_folders)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/draggables.rpy", line 7, in detective_dragged
-    if l1_files.count() == 0:
-TypeError: count() takes exactly one argument (0 given)
+Total time until interface ready: 2.11623883247s
 Resetting cache.
-Bootstrap to the start of init.init took 75.36s
+Bootstrap to the start of init.init took 18.82s
 Early init took 0.00s
 Loader init took 0.01s
-Loading error handling took 0.02s
-Loading script took 0.08s
+Loading error handling took 0.01s
+Loading script took 0.09s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.04s
+Running init code took 0.05s
 Loading analysis data took 0.01s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -115,19 +48,19 @@ Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\p
 Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.04s
+Initial gc. took 0.02s
 DPI scale factor: 1.750000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: 'Initialize() = -6.' (can be ignored)
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.04s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
-Save screen analysis took 0.06s
+Save screen analysis took 0.05s
 Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
+Save pyanalysis. took 0.06s
 Save bytecode. took 0.01s
 Running _start took 0.00s
 Performance test:
@@ -143,310 +76,11 @@ Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
 Display Info: None
 Screen sizes: virtual=(1024, 768) physical=(1792, 1344) drawable=(1792, 1344)
 Maximum texture size: 4096x4096
-Total time until interface ready: 75.8814311028s
-
-Full traceback:
-  File "game/script.rpy", line 60, in script
-    call screen level1(l1_files, l2_folders)
-  File "renpy/ast.py", line 1969, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 1957, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "renpy/exports.py", line 3057, in call_screen
-    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3213, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 4037, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/screen.py", line 720, in event
-    rv = self.child.event(ev, x, y, st)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/dragdrop.py", line 860, in event
-    return super(DragGroup, self).event(ev, x, y, st)
-  File "renpy/display/layout.py", line 1059, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/display/dragdrop.py", line 733, in event
-    rv = run(drag.dragged, joined, drop)
-  File "renpy/display/behavior.py", line 329, in run
-    return action(*args, **kwargs)
-  File "game/draggables.rpy", line 7, in detective_dragged
-    if l1_files.len() == 0:
-AttributeError: 'RevertableList' object has no attribute 'len'
-
-While running game code:
-  File "game/script.rpy", line 60, in script
-    call screen level1(l1_files, l2_folders)
-  File "renpy/common/000statements.rpy", line 569, in execute_call_screen
-    store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/draggables.rpy", line 7, in detective_dragged
-    if l1_files.len() == 0:
-AttributeError: 'RevertableList' object has no attribute 'len'
-Resetting cache.
-Bootstrap to the start of init.init took 98.96s
-Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.01s
-Loading script took 0.08s
-Loading save slot metadata. took 0.01s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.03s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
-Dump and make backups. took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.04s
-DPI scale factor: 1.750000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: 'Initialize() = -6.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.04s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.05s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3840, 2160)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'ATI Technologies Inc.'
-Renderer: 'Radeon RX 570 Series'
-Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
-Display Info: None
-Screen sizes: virtual=(1024, 768) physical=(1792, 1344) drawable=(1792, 1344)
-Maximum texture size: 4096x4096
-Total time until interface ready: 99.4818291664s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Resetting cache.
-Bootstrap to the start of init.init took 110.79s
-Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.01s
-Loading script took 0.11s
-Loading save slot metadata. took 0.01s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.03s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
-Dump and make backups. took 0.05s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.05s
-DPI scale factor: 1.750000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: 'Initialize() = -6.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.04s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.05s
-Prepare screens took 0.06s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3840, 2160)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'ATI Technologies Inc.'
-Renderer: 'Radeon RX 570 Series'
-Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
-Display Info: None
-Screen sizes: virtual=(1024, 768) physical=(1792, 1344) drawable=(1792, 1344)
-Maximum texture size: 4096x4096
-Total time until interface ready: 111.364598036s
-
-Full traceback:
-  File "game/script.rpy", line 63, in script
-    "Okay, we'll send [detective] to [city]."
-  File "renpy/ast.py", line 715, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1417, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1206, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "renpy/character.py", line 1125, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "renpy/character.py", line 1105, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'detective'
-
-While running game code:
-  File "game/script.rpy", line 63, in script
-    "Okay, we'll send [detective] to [city]."
-KeyError: u'detective'
-Resetting cache.
-Bootstrap to the start of init.init took 116.07s
-Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.01s
-Loading script took 0.08s
-Loading save slot metadata. took 0.01s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.03s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Dump and make backups. took 0.05s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.04s
-DPI scale factor: 1.750000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: 'Initialize() = -6.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.04s
-Build styles took 0.00s
-Load screen analysis took 0.03s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.05s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3840, 2160)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'ATI Technologies Inc.'
-Renderer: 'Radeon RX 570 Series'
-Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
-Display Info: None
-Screen sizes: virtual=(1024, 768) physical=(1792, 1344) drawable=(1792, 1344)
-Maximum texture size: 4096x4096
-Total time until interface ready: 116.574694157s
-
-Full traceback:
-  File "game/script.rpy", line 63, in script
-    "Okay, we'll send [detective] to [city]."
-  File "renpy/ast.py", line 715, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1417, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1206, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-  File "renpy/character.py", line 1125, in prefix_suffix
-    return (sub(prefix) + sub(body) + sub(suffix))
-  File "renpy/character.py", line 1105, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-  File "renpy/substitutions.py", line 270, in substitute
-    s = formatter.vformat(s, (), kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 563, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'detective'
-
-While running game code:
-  File "game/script.rpy", line 63, in script
-    "Okay, we'll send [detective] to [city]."
-KeyError: u'detective'
-Resetting cache.
-Bootstrap to the start of init.init took 122.29s
-Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.01s
-Loading script took 0.08s
-Loading save slot metadata. took 0.01s
-Loading persistent took 0.00s
-Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.03s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
-Dump and make backups. took 0.05s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.04s
-DPI scale factor: 1.750000
-nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: 'Initialize() = -6.' (can be ignored)
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.04s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.05s
-Prepare screens took 0.05s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.01s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.04s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3840, 2160)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'ATI Technologies Inc.'
-Renderer: 'Radeon RX 570 Series'
-Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
-Display Info: None
-Screen sizes: virtual=(1024, 768) physical=(1792, 1344) drawable=(1792, 1344)
-Maximum texture size: 4096x4096
-Total time until interface ready: 122.813948154s
+Total time until interface ready: 19.3739688396s
 Cleaning stores took 0.00s
 Init translation took 0.00s
 Build styles took 0.00s
 Load screen analysis took 0.02s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
-Running _start took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.00s
-Build styles took 0.00s
-Load screen analysis took 0.01s
 Analyze screens took 0.00s
 Prepare screens took 0.00s
 Running _start took 0.00s
