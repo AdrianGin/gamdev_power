@@ -209,7 +209,7 @@ screen user_interface_health():
             null height 10
             label "Remaining Power"
             bar:
-                value StaticValue(player_data.availablePower, 1000) 
+                value StaticValue(player_data.availablePower, 600) 
 
             if player_data.enemyTimerStarted == True :
                 null height 10

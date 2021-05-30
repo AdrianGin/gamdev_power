@@ -57,7 +57,7 @@ init python:
             self.isMeltDown = False
         
         def resetPower(self):
-            self.availablePower = 1000
+            self.availablePower = 600
             
     class drag_context:
         def __init__(self, item, item_list):
