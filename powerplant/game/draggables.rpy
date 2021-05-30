@@ -75,6 +75,9 @@ init python:
     const_l2_files = []
     const_l2_folders = []
 
+    const_l3_files = []
+    const_l3_folders = []
+
     timers = []
     player_data = player()
     fileContext = drag_context(item_location(), item_location())
@@ -88,6 +91,7 @@ init python:
 
         initLevel1()
         initLevel2()
+        initLevel3()
         return
 
     def initLevel1():
@@ -134,6 +138,41 @@ init python:
         const_l2_files.append( item_location(2, 623,433, File_StickyNoteM1D) )
         const_l2_files.append( item_location(1, 708,236, File_ToDoD) )
         const_l2_files.append( item_location(0, 689,330, File_DocumentLD) )
+
+    def initLevel3():
+        const_l3_folders.append( item_location(0, 35,35, Folder_Admin) )
+        const_l3_folders.append( item_location(1, 119,35, Folder_PlantData) )
+        const_l3_folders.append( item_location(2, 51,422, Folder_BinM) )
+        const_l3_folders.append( item_location(3, 207,35, Folder_Media) )
+        const_l3_folders.append( item_location(4, 689,412, Folder_Disk) )
+
+        const_l3_files.append( item_location(4, 30,160, File_Map) )
+        const_l3_files.append( item_location(0, 109,192, File_ToDoD) )
+        const_l3_files.append( item_location(3, 110,268, File_TricksetPhoto) )
+        const_l3_files.append( item_location(2, 30,336, File_SignalLogL) )
+        const_l3_files.append( item_location(3, 208,252, File_VideoML) )
+        const_l3_files.append( item_location(3, 208,319, File_VideoDL) )
+        const_l3_files.append( item_location(0, 208,388, File_DocumentDL) )
+        const_l3_files.append( item_location(2, 302,128, File_TricksetGolf) )
+        const_l3_files.append( item_location(0, 361,26, File_ToDoD) )
+        const_l3_files.append( item_location(0, 352,165, File_TricksetJeeves) )
+        const_l3_files.append( item_location(3, 348,277, File_TricksetPhoto) )
+        const_l3_files.append( item_location(3, 371,407, File_VideoML) )
+        const_l3_files.append( item_location(2, 436,316, File_SignalLogL) )
+        const_l3_files.append( item_location(1, 436,214, File_GraphM1L) )
+        const_l3_files.append( item_location(2, 435,407, File_PlayCoinML) )
+        const_l3_files.append( item_location(1, 26,456, File_Diagnostics) )
+        const_l3_files.append( item_location(3, 488,114, File_VideoML) )
+        const_l3_files.append( item_location(2, 548,26, File_SignalLogL) )
+        const_l3_files.append( item_location(3, 537,268, File_TricksetPhoto) )
+        const_l3_files.append( item_location(2, 537,357, File_TricksetGolf) )
+        const_l3_files.append( item_location(1, 601,395, File_GraphM1L) )
+        const_l3_files.append( item_location(0, 631,225, File_TricksetJeeves) )
+        const_l3_files.append( item_location(3, 692,319, File_VideoML) )
+        const_l3_files.append( item_location(2, 692,210, File_PlayCoinML) )
+        const_l3_files.append( item_location(2, 692,97, File_TricksetGolf) )
+        const_l3_files.append( item_location(0, 685,25, File_DocumentDL) )
+
 
     def initPlayer():
         global player_data

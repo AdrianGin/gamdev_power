@@ -113,7 +113,6 @@ init -1 python:
         else:
             return Image("File-StickynoteDD-Dark.png"), 0.0
 
- 
 
     def Dyn_File_StickyNoteM1D(st, at):
         if player_data.isLightMode == True:
@@ -126,6 +125,53 @@ init -1 python:
     File_StickyNoteM1D = DynamicDisplayable(Dyn_File_StickyNoteM1D)
 
 
+    def Dyn_File_TricksetPhoto(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-TricksetPhoto-Light.png"), 0.0
+        else:
+            return Image("File-TricksetPhoto-Dark.png"), 0.0
+
+    File_TricksetPhoto = DynamicDisplayable(Dyn_File_TricksetPhoto)
+
+    def Dyn_File_TricksetGolf(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-TricksetGolf-Light.png"), 0.0
+        else:
+            return Image("File-TricksetGolf-Dark.png"), 0.0
+
+    File_TricksetGolf = DynamicDisplayable(Dyn_File_TricksetGolf)
+
+    def Dyn_File_TricksetJeeves(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-TricksetJeeves-Light.png"), 0.0
+        else:
+            return Image("File-TricksetJeeves-Dark.png"), 0.0
+
+    File_TricksetJeeves = DynamicDisplayable(Dyn_File_TricksetJeeves)
+
+    def Dyn_File_PlayCoinML(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-PlayCoin-Light.png"), 0.0
+        else:
+            return Image("File-PlayCoin-Dark.png"), 0.0
+
+    File_PlayCoinML = DynamicDisplayable(Dyn_File_PlayCoinML)
+
+    def Dyn_File_Diagnostics(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-Diagnostics-Light.png"), 0.0
+        else:
+            return Image("File-Diagnostics-Dark.png"), 0.0
+
+    File_Diagnostics = DynamicDisplayable(Dyn_File_Diagnostics)
+
+        def Dyn_File_SignalLogL(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-SignalLogL-Light.png"), 0.0
+        else:
+            return Image("File-SignalLogL-Dark.png"), 0.0
+
+    File_SignalLogL = DynamicDisplayable(Dyn_File_SignalLogL)
 
     def Dyn_Folder_Admin(st, at):
         if player_data.isLightMode == True:
@@ -145,9 +191,16 @@ init -1 python:
         else:
             return Image("Folder-BinM.png"), 0.0
 
+    def Dyn_Folder_Disk(st, at):
+        if player_data.isLightMode == True:
+            return Image("Folder-Disk-Light.png"), 0.0
+        else:
+            return Image("Folder-Disk-Dark.png"), 0.0            
+
     Folder_PlantData = DynamicDisplayable(Dyn_Folder_PlantData)
     Folder_Admin = DynamicDisplayable(Dyn_Folder_Admin)
     Folder_BinM = DynamicDisplayable(Dyn_Folder_BinM)
+    Folder_Disk = DynamicDisplayable(Dyn_Folder_Disk)
 
 screen level1(files, folders):
     timer 0.1 action Function(PowerTimerCallback, player_data) repeat True

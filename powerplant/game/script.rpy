@@ -25,9 +25,9 @@ label start:
     
     # This ends the game.
     call day1
-   # if player_data.isHelp == True:
-   #     call day5_help
-    #call day2
+    if player_data.isHelp == True:
+        call day5_help
+    call day2
     #call day3
 
     return
