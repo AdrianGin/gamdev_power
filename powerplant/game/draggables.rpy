@@ -91,7 +91,7 @@ init python:
 
         initLevel1()
         initLevel2()
-        initLevel3()
+       # initLevel3()
         return
 
     def initLevel1():
@@ -140,6 +140,8 @@ init python:
         const_l2_files.append( item_location(0, 689,330, File_DocumentLD) )
 
     def initLevel3():
+        global const_l3_files
+        global const_l3_folders
         const_l3_folders.append( item_location(0, 35,35, Folder_Admin) )
         const_l3_folders.append( item_location(1, 119,35, Folder_PlantData) )
         const_l3_folders.append( item_location(2, 51,422, Folder_BinM) )
