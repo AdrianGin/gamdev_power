@@ -1,50 +1,34 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 38, in script call
-    call day1 from _call_day1
-  File "game/script.rpy", line 48, in script
-    "Please organise these folders"
-IOError: Couldn't find file 'audio/Audio_M_01_State01_Loop.wavaudio/Audio_M_01_State02_Loop.wavaudio/Audio_M_01_State03_Loop.wavaudio/Audio_M_01_State04_Loop.wavaudio/Audio_M_01_State05_Loop.wavaudio/Audio_M_01_State06_Loop.wav'.
+  File "game/level1.rpy", line 5, in script
+    init -1 python:
+  File "game/level1.rpy", line 5, in script
+    init -1 python:
+  File "game/level1.rpy", line 31, in <module>
+    filel_d = DynamicDisplayable(get_file, fileContext)
+NameError: name 'fileContext' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 38, in script call
-    call day1 from _call_day1
-  File "game/script.rpy", line 48, in script
-    "Please organise these folders"
-  File "renpy/ast.py", line 715, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1417, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1219, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 871, in do_display
-    **display_args)
-  File "renpy/character.py", line 621, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3213, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3915, in interact_core
-    renpy.audio.audio.periodic()
-  File "renpy/audio/audio.py", line 1126, in periodic
-    raise_(exc[0], exc[1], exc[2])
-  File "renpy/audio/audio.py", line 1104, in periodic_thread_main
-    periodic_pass()
-  File "renpy/audio/audio.py", line 1046, in periodic_pass
-    c.periodic()
-  File "renpy/audio/audio.py", line 505, in periodic
-    topf = load(self.file_prefix + filename + self.file_suffix)
-  File "renpy/audio/audio.py", line 69, in load
-    rv = renpy.loader.load(fn)
-  File "renpy/loader.py", line 798, in load
-    raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'audio/Audio_M_01_State01_Loop.wavaudio/Audio_M_01_State02_Loop.wavaudio/Audio_M_01_State03_Loop.wavaudio/Audio_M_01_State04_Loop.wavaudio/Audio_M_01_State05_Loop.wavaudio/Audio_M_01_State06_Loop.wav'.
+  File "renpy/bootstrap.py", line 326, in bootstrap
+    renpy.main.main()
+  File "renpy/main.py", line 515, in main
+    renpy.game.context().run(node)
+  File "game/level1.rpy", line 5, in script
+    init -1 python:
+  File "game/level1.rpy", line 5, in script
+    init -1 python:
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/level1.rpy", line 31, in <module>
+    filel_d = DynamicDisplayable(get_file, fileContext)
+NameError: name 'fileContext' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.5.1648
 powerplant 1.0
-Sun May 30 00:10:20 2021
+Sun May 30 12:00:25 2021

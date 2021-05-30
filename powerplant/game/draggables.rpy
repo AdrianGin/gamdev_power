@@ -19,7 +19,7 @@ init python:
 
     class player:
         def __init__(self):
-            self.availablePower = 100
+            self.availablePower = 10000
             self.meltdownLevel = 0
             self.isLightMode = False
             
@@ -29,12 +29,18 @@ init python:
             self.item_list = item_list
 
     class item_location:
-        def __init__(self, id, x, y, type, name = ""):
+        def __init__(self, id = 0, x = 0, y = 0, type = "", type2 = "", name = ""):
             self.id = id
             self.x = x
             self.y = y
-            self.type = type
+            
             self.name = name
+
+            self.img = type 
+            self.type = type
+            self.type2 = type
+            if type2 == "":
+                self.type2 = type
 
 
     class SoftTimer:
@@ -58,6 +64,7 @@ init python:
 
     timers = []
     player_data = player()
+    fileContext = drag_context(item_location(), item_location())
 
     def initGame():
         initLevels()
@@ -76,7 +83,7 @@ init python:
         const_l1_files.clear()
         const_l1_folders.clear()
 
-        const_l1_folders.append( item_location(0, 51,62, "Folder-Admin.png") )
+        const_l1_folders.append( item_location(0, 51,62, level_dx) )
         const_l1_folders.append( item_location(1, 155,62, "Folder-PlantData.png") )
 
         const_l1_files.append( item_location(0, 239,234, "File-DocumentM1D.png") )
@@ -103,6 +110,11 @@ init python:
     def PowerTimerCallback(context):
         if context.isLightMode == True:
             context.availablePower = context.availablePower - 1
+            if context.availablePower <= 0 :
+                context.isLightMode = False
+                renpy.play("audio/Audio_SFX_UI_Shutdown_01.wav")
+
+
         pass
 
     def periodic_callback():

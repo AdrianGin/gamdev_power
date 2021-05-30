@@ -3,7 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Employee 1")
+define e = Character("EMPLOYEE 420205A")
+
 image bg black = "#000000"
 image bg white = "#FFFFFF"
 image countdown = DynamicDisplayable(show_countdown)
@@ -26,7 +27,7 @@ label start:
    # show eileen happy
 
     # These display lines of dialogue.
-    call day1Intro
+    call day1Intro from _call_day1Intro
 
 
 
@@ -49,9 +50,16 @@ label day1Intro:
 
     return
 
-label day1:
-    
 
+
+label day1:
+
+    "- - - DEAR EMPLOYEE 558896C - - -\n
+    - - - WELCOME AT CENTRAL SERVICES NUCLEAR POWER PLANT - - -\n
+    - - - DUE TO TEMPORARY FINANCIAL DIFFICULTIES YOU WILL SHARE YOUR WORKSTATION WITH YOUR COLLEAGUE FROM NIGHTSHIFT - - -\n
+    - - - IN ORDER TO REDUCE OUR ENERGY BILL YOUR WORKSTATION HAS BEEN UPDATED WITH THE NEW DARK MODE DISPLAY - - -\n
+    - - - IN CONSEQUENCE BRIGHT MODE USE WILL BE LIMITED - - -\n
+    - - - READ THE DAILY TASKS FILE TO BE INFORMED OF YOUR DAY'S DUTY - - -\n"
 
     "Please organise these folders"
    # screen button_example
@@ -96,10 +104,6 @@ screen user_interface_health():
                 value StaticValue(player_data.availablePower, 100) 
 
             timer 0.1 action Function(PowerTimerCallback, player_data) repeat True
-
-label UpdateAvailablePower:
-    $ player_data.availablePower = player_data.availablePower - 1
-    return
 
 screen change_mode():
     default BgCol = 1
