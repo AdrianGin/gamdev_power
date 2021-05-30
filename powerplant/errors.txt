@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 53: screen expects a non-empty block.
-    screen day1Inst:
-                    ^
+File "game/level1.rpy", line 14: invalid syntax
+    def File-CalendarDL(st, at):
+             ^
+    
 
 Ren'Py Version: Ren'Py 7.4.5.1648
-Sun May 30 12:38:02 2021
+Sun May 30 13:18:08 2021

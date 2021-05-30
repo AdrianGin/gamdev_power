@@ -11,38 +11,45 @@ init -1 python:
                 return filel1, 0.1
             return fileContext.item.type, 0.1
 
-    def get1_file(st, at):
-
+    def Dyn_File_CalendarDL(st, at):
         if player_data.isLightMode == True:
-            return Image("File-CalendarDL.png"), 0.0
+            return Image("File-CalendarDL-Light.png"), 0.0
+        else:
+            return Image("File-CalendarDL-Dark.png"), 0.0
+
+
+    def Dyn_File_CalendarLL(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-CalendarLL-Light.png"), 0.0
+        else:
+            return Image("File-CalendarLL-Dark.png"), 0.0       
+
+    def Dyn_File_CalendarM1L(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-CalendarM1L-Light.png"), 0.0
+        else:
+            return Image("File-CalendarM1L-Dark.png"), 0.0                   
+
+    def Dyn_Folder_Admin(st, at):
+        if player_data.isLightMode == True:
+            return Image("Folder-Admin.png"), 0.0
         else:
             return Image("Folder-Admin.png"), 0.0
-            
-        drag = Drag( Image("File-CalendarDL.png"), "test" )    
-        drag2 = Drag( Image("Folder-Admin.png"), "test", True )   
-        #return drag2, 0.1
 
-        fixed = Fixed( DragGroup( drag, drag2, xfill = True, yfill = True), xfill = True, yfill = True )
-
-        return drag, 0.2
+    def Dyn_Folder_PlantData(st, at):
+        if player_data.isLightMode == True:
+            return Image("Folder-PlantData-Light.png"), 0.0
+        else:
+            return Image("Folder-PlantData-Dark.png"), 0.0
 
 
-    filel1 = Image("images/Folder-PlantData.png")
- #   filel_d = DynamicDisplayable(get_file, fileContext)
 
-    level_d = ConditionSwitch("player_data.isLightMode == True", "File-CalendarDL.png",
-                              "player_data.isLightMode == False", "Folder-Admin.png")
+    File_CalendarDL = DynamicDisplayable(Dyn_File_CalendarDL)
+    File_CalendarLL = DynamicDisplayable(Dyn_File_CalendarLL)
+    File_CalendarM1L = DynamicDisplayable(Dyn_File_CalendarM1L)
 
-    level_dx = DynamicDisplayable(get1_file)
-
-screen level1_dyn(files, folders):
-
-    drag:
-        drag_name "eoe"
-        child level_dx
-        droppable False
-
-
+    Folder_PlantData = DynamicDisplayable(Dyn_Folder_PlantData)
+    Folder_Admin = DynamicDisplayable(Dyn_Folder_Admin)
 
 
 screen level1(files, folders):

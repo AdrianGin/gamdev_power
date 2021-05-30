@@ -23,17 +23,8 @@ label start:
     show screen change_mode
     show screen user_interface_health
     
-    #show screen light_mode
-   # show eileen happy
-
-    # These display lines of dialogue.
-    call day1Intro from _call_day1Intro
-
-
-
     # This ends the game.
-
-    call day1 from _call_day1
+    call day1
 
     return
 
@@ -41,27 +32,19 @@ label day1Intro:
     play music ["audio/Audio_M_01_State01_Loop.wav",
      "audio/Audio_M_01_State02_Loop.wav", "audio/Audio_M_01_State03_Loop.wav",
       "audio/Audio_M_01_State04_Loop.wav", "audio/Audio_M_01_State05_Loop.wav", "audio/Audio_M_01_State06_Loop.wav"] fadeout 4.0 fadein 4.0
-    
-    e "Welcome to your first day at the power plant"
-
-    e "To save power, we implemented light and dark mode."
-
-    e "Now get to work!"
-
     return
 
 
 
+
+
 label day1:
+    call day1Intro
 
-    "- - - DEAR EMPLOYEE 558896C - - -\n
-    - - - WELCOME AT CENTRAL SERVICES NUCLEAR POWER PLANT - - -\n
-    - - - DUE TO TEMPORARY FINANCIAL DIFFICULTIES YOU WILL SHARE YOUR WORKSTATION WITH YOUR COLLEAGUE FROM NIGHTSHIFT - - -\n
-    - - - IN ORDER TO REDUCE OUR ENERGY BILL YOUR WORKSTATION HAS BEEN UPDATED WITH THE NEW DARK MODE DISPLAY - - -\n
-    - - - IN CONSEQUENCE BRIGHT MODE USE WILL BE LIMITED - - -\n
-    - - - READ THE DAILY TASKS FILE TO BE INFORMED OF YOUR DAY'S DUTY - - -\n"
+    show screen day1Instructions
+    pause
+    hide screen day1Instructions
 
-    "Please organise these folders"
    # screen button_example
     default day1Complete = False
 
@@ -86,7 +69,17 @@ label end1:
     "Done!"
     return
 
+label day2:
+    call day2Intro
+    show screen day2Instructions
+    pause
+    hide screen day2Instructions
 
+    
+
+label day2Intro:
+    play music ["audio/Audio_M_01_State02_Loop.wav"] fadeout 4.0 fadein 4.0
+    return   
 
 screen user_interface_health():
     frame:
