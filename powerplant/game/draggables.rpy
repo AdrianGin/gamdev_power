@@ -26,13 +26,14 @@ init python:
             self.isLightMode = False
             self.isEnemyCaptured = False
 
-            self.enemyPosition = 200
+            self.enemyPosition = 100
             self.resetPower()
 
+            self.enemyTimerStarted = False
             self.day3helpsCompany = False
         
         def resetPower(self):
-            self.availablePower = 100
+            self.availablePower = 10000
             
     class drag_context:
         def __init__(self, item, item_list):
@@ -40,18 +41,13 @@ init python:
             self.item_list = item_list
 
     class item_location:
-        def __init__(self, id = 0, x = 0, y = 0, type = "", type2 = "", name = ""):
+        def __init__(self, id = 0, x = 0, y = 0, type = "", IsHelp = False):
             self.id = id
             self.x = x
             self.y = y
             
-            self.name = name
-
-            self.img = type 
             self.type = type
-            self.type2 = type
-            if type2 == "":
-                self.type2 = type
+            self.help = IsHelp
 
 
     class SoftTimer:
@@ -119,7 +115,7 @@ init python:
         const_l2_folders.append( item_location(1, 155,62, Folder_PlantData) )
         const_l2_folders.append( item_location(2, 51,413, Folder_BinM) )
 
-        const_l2_files.append( item_location(2, 287,144, File_StickynoteDD) )
+        const_l2_files.append( item_location(2, 287,144, File_StickyNoteDD) )
         const_l2_files.append( item_location(1, 429,80, File_GraphLD) )
         const_l2_files.append( item_location(0, 552,55, File_CalendarLL) )
         const_l2_files.append( item_location(0, 576,144, File_DocumentLD) )
@@ -155,7 +151,7 @@ init python:
 
 
     def EnemyTimerCallback(context):
-        if context.enemyPosition != 100:
+        if context.enemyTimerStarted == True:
             context.enemyPosition = context.enemyPosition - 1
             #if context.enemyPosition <= 0 :
              #   context.isLightMode = False

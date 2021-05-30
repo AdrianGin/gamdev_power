@@ -3,13 +3,6 @@
 #image filel1 = DynamicDisplayable(show_countdown)
 
 init -1 python:
-    def get_file(st, at, fileContext):
-        if player_data.isLightMode == True:
-            return Image("File-CalendarDL.png"), 0.1
-        else:
-            if fileContext.item.type == "":
-                return filel1, 0.1
-            return fileContext.item.type, 0.1
 
     def Dyn_File_CalendarDL(st, at):
         if player_data.isLightMode == True:
@@ -96,7 +89,7 @@ init -1 python:
     File_DocumentDL = DynamicDisplayable(Dyn_File_DocumentDL)
     File_DocumentLL = DynamicDisplayable(Dyn_File_DocumentLL)
     File_DocumentM1D = DynamicDisplayable(Dyn_File_DocumentM1D)
-
+    File_DocumentLD = DynamicDisplayable(Dyn_File_DocumentDL)
 
     def Dyn_File_ToDoD(st, at):
         if player_data.isLightMode == True:
@@ -116,17 +109,17 @@ init -1 python:
 
     def Dyn_File_StickyNoteDD(st, at):
         if player_data.isLightMode == True:
-            return Image("File-StickyNoteDD-Light.png"), 0.0
+            return Image("File-StickynoteDD-Light.png"), 0.0
         else:
-            return Image("File-StickyNoteDD-Dark.png"), 0.0
+            return Image("File-StickynoteDD-Dark.png"), 0.0
 
  
 
     def Dyn_File_StickyNoteM1D(st, at):
         if player_data.isLightMode == True:
-            return Image("File-StickyNoteM1D-Light.png"), 0.0
+            return Image("File-StickynoteM1D-Light.png"), 0.0
         else:
-            return Image("File-StickyNoteM1D-Dark.png"), 0.0                   
+            return Image("File-StickynoteM1D-Dark.png"), 0.0                   
 
 
     File_StickyNoteDD = DynamicDisplayable(Dyn_File_StickyNoteDD)
@@ -146,9 +139,15 @@ init -1 python:
         else:
             return Image("Folder-PlantData-Dark.png"), 0.0
 
+    def Dyn_Folder_BinM(st, at):
+        if player_data.isLightMode == True:
+            return Image("Folder-BinM.png"), 0.0
+        else:
+            return Image("Folder-BinM.png"), 0.0
+
     Folder_PlantData = DynamicDisplayable(Dyn_Folder_PlantData)
     Folder_Admin = DynamicDisplayable(Dyn_Folder_Admin)
-
+    Folder_BinM = DynamicDisplayable(Dyn_Folder_BinM)
 
 screen level1(files, folders):
     timer 0.1 action Function(PowerTimerCallback, player_data) repeat True

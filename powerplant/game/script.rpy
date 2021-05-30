@@ -24,8 +24,10 @@ label start:
     show screen user_interface_health
     
     # This ends the game.
-    call day1
-    call day2
+    #call day1
+    #call day2
+    #call day3
+    call day5_help
 
     return
 
@@ -157,7 +159,7 @@ label day3Intro:
 
 screen user_interface_health():
     frame:
-        xalign 0.8 yalign 0.8
+        xalign 0.96 yalign 0.96
         xsize 200
         background "#FFFFFF00"
         vbox:
@@ -170,7 +172,7 @@ screen user_interface_health():
             bar:
                 value StaticValue(player_data.availablePower, 100) 
 
-            if player_data.enemyPosition < 100 :
+            if player_data.enemyTimerStarted == True :
                 null height 10
                 label "Incoming Security Personnel"
                 bar:
