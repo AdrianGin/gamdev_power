@@ -187,11 +187,20 @@ label doFailCheck:
     if player_data.meltdownLevel > 100:
         $ player_data.isMeltDown = True
 
+    if player_data.enemyPosition <= 0:
+        $ player_data.isEnemyCaptured = True
+
     return
 
-label doMeltdown:
+label doMeltdown:   
     scene end
     show screen reactorBlow
+    "You failed"
+    return
+
+label youGotCaptured:
+    scene end
+    show screen caputuredByEnemy   
     "You failed"
     return
 

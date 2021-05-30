@@ -568,6 +568,12 @@ screen about():
                 text "[gui.about!t]\n"
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+            text _("\n\n")
+            text _("Made for Game Jam Aotearoa 2021")
+            text _("Programming: Adrian Gin")
+            text _("Visual Artist: Karidyas")
+            text _("Music & Sounds: Vic05")
+            text _("Narration: Am0")
 
 
 style about_label is gui_label

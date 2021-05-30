@@ -93,7 +93,7 @@ define config.after_load_transition = None
 
 define config.end_game_transition = None
 
-
+define config.rollback_enabled = False
 ## A variable to set the transition used when the game starts does not exist.
 ## Instead, use a with statement after showing the initial scene.
 

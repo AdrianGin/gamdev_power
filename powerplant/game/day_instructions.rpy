@@ -131,4 +131,16 @@ screen reactorBlow:
 \n- - - ***50 MILE RADIUS EXPLOSION IMMINENT*** - - -\
 \n- - - ***EVACUATE IMMEDIATELY*** - - -"
 
-                                                                        
+screen caputuredByEnemy:
+    frame:
+        yfill True
+        xfill True
+        background "#000000"
+        xalign 0.0 ypos 50
+        vbox:
+            style_prefix "terminal"
+            text   "- - - ALL STAFF - - -\
+\n- - - ***INFILTRATOR EXTERMINATED*** - - -\
+\n- - - ***GO BACK TO YOUR EVERYDAY ROLES***- - -"
+
+                                                                                                                                                

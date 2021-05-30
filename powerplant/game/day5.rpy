@@ -82,6 +82,10 @@ label day5_help:
             jump doMeltdown
             return
 
+        if player_data.isEnemyCaptured == True:
+            jump youGotCaptured
+            return
+
         if CountOptionalFiles(files) == 0:
             $ day3Complete = _return
             jump end5
