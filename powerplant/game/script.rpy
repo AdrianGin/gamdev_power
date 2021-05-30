@@ -24,13 +24,9 @@ label start:
     show screen user_interface_health
     
     # This ends the game.
-    #call day1 from _call_day1
-    #call day2 from _call_day2
-    call day3 from _call_day3
-    if player_data.isHelp == True:
-        call day5_help from _call_day5_help
-    else:
-        call day5_comp
+    jump day1
+   # jump day2
+  #  jump day3
 
     return
 
@@ -71,11 +67,17 @@ label day1:
         if _return == Correct:
             call Correct from _call_Correct
 
+        call doFailCheck from _call_doFailCheck_2
+        if player_data.isMeltDown == True:
+            jump doMeltdown
+            return
+
         if AreFilesAllMoved(files) == 0:
             $ dayComplete = _return
-            jump end1
+            jump day2
     
 label end1:
+    jump day2
     return
 
 label day2:
@@ -106,11 +108,16 @@ label day2:
         if _return == Correct:
             call Correct from _call_Correct_3
 
+        call doFailCheck from _call_doFailCheck_3
+        if player_data.isMeltDown == True:
+            jump doMeltdown
+            return
+
         if AreFilesAllMoved(files) == 0:
             $ day2Complete = _return
-            jump end1
+            jump day3
 
-    jump end1
+    return
 
 
 label day2Intro:
@@ -146,7 +153,10 @@ Cheers"
         if _return == Correct:
             call Correct from _call_Correct_4
 
-        call doFailCheck
+        call doFailCheck from _call_doFailCheck_4
+        if player_data.isMeltDown == True:
+            jump doMeltdown
+            return
         
         if CountOptionalFiles(files) == 0:
             $ player_data.isHelp = True
@@ -161,6 +171,10 @@ Cheers"
     return
 
 label end3:
+    if player_data.isHelp == True:
+        jump day5_help
+    else:
+        jump day5_comp
     return
 
 label day3Intro:
@@ -169,10 +183,18 @@ label day3Intro:
 
 
 label doFailCheck:
+    scene end
     if player_data.meltdownLevel > 100:
-        show screen reactorBlow
+        $ player_data.isMeltDown = True
 
     return
+
+label doMeltdown:
+    scene end
+    show screen reactorBlow
+    "You failed"
+    return
+
 
 screen user_interface_health():
     frame:
@@ -187,7 +209,7 @@ screen user_interface_health():
             null height 10
             label "Remaining Power"
             bar:
-                value StaticValue(player_data.availablePower, 100) 
+                value StaticValue(player_data.availablePower, 1000) 
 
             if player_data.enemyTimerStarted == True :
                 null height 10
@@ -195,7 +217,7 @@ screen user_interface_health():
                 bar:
                     value StaticValue(player_data.enemyPosition, 100) 
 
-            timer 0.1 action Function(PowerTimerCallback, player_data) repeat True
+            timer 2.0 action Function(PowerTimerCallback, player_data) repeat True
             timer 0.5 action Function(EnemyTimerCallback, player_data) repeat True
 
             timer 6.0 action Function(SoundCheckCallback, player_data) repeat True

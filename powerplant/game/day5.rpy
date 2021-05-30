@@ -19,14 +19,21 @@ label day5_comp:
         if _return == Correct:
             call Correct from _call_Correct_1
 
-        if len(files) == 0:
-            $ day3Complete = _return
-            jump end1
+        call doFailCheck from _call_doFailCheck
+        if player_data.isMeltDown == True:
+            jump doMeltdown
+            return
 
+        if AreFilesAllMoved(files) == 0:
+            $ day3Complete = _return
+            jump end5_normal
+
+    jump end5_normal
+
+label end5_normal:
     "I never knew what happened to my colleague... nevermind."
     "Just another day at the office I guess."
-
-    jump end1
+    return
 
 
 label day5Intro:
@@ -49,8 +56,8 @@ label day5_help:
         \nThe security unit are closing in on your position. Thanks for all.
 
         \nOh I nearly forgot.. run through this sequence and we'll both be free:
-        \nSave the Map and Secrets.
-        \nPlace everything into the bin.
+        \nFind and put Maps into Disk.
+        \nPut Script into Plant Data to cause distraction.
 
         \nEdwy"
 
@@ -70,15 +77,25 @@ label day5_help:
         if _return == Correct:
             call Correct from _call_Correct_2
 
-        if len(files) == 0:
-            $ day5_helpComplete = _return
-            jump end1
+        call doFailCheck from _call_doFailCheck_1
+        if player_data.isMeltDown == True:
+            jump doMeltdown
+            return
 
-    "The alarms seemed to have stopped. The place has gone into lockdown level 4."
-    "As you drive home a convoy of police cars and army vehicles rush past"
-    jump end1
+        if CountOptionalFiles(files) == 0:
+            $ day3Complete = _return
+            jump end5
+
+
+    jump end5
 
 
 label day5Intro_help:
     play music ["audio/Boss.wav"] fadeout 2.0 fadein 2.0
-    return   
+    return  
+
+label end5:
+    "The alarms seemed to have stopped. The place has gone into lockdown level 4."
+    "As you drive home a convoy of police cars and army vehicles rush past"
+    "We made it out!"
+    return 

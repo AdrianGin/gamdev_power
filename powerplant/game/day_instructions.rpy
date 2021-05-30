@@ -20,9 +20,8 @@ screen day1Instructions:
                     \nRef: J59872\
                     \nObject: Maintenance Operation 45-/56\
                     \nProcess:\
-                    \n1_ Drag Folder 1 on Process 1\
-                    \n2_ Drag Folder 2 on Process 2\
-                    \n3_ Drag Folder 3 on Process 3"  
+                    \n- Put Calendars and Documents into Admin\
+                    \n- Put Graphs into Plant Data"  
 
 
 
@@ -46,9 +45,9 @@ screen day2Instructions:
                     \nRef: J59873\
                     \nObject: Maintenance Operation 45-/56\
                     \nProcess:\
-                    \n1_ \
-                    \n2_\
-                    \n3_"  
+                    \n- Put Calendars, To-Do Lists and Documents into Admin\
+                    \n- Put Graphs into Plant Data\
+                    \n- Put Sticky Notes in the Recycling"  
 
 
 screen day3Instructions:
@@ -73,9 +72,10 @@ screen day3Instructions:
                     \nRef: DefCon4\
                     \nObject: Security Check Sequence 45-/56\
                     \nProcess:\
-                    \n1_ \
-                    \n2_\
-                    \n3_"                      
+                    \n- Put To-Do Lists, Documents and Jeeves Answers into Admin\
+                    \n- Put Graphs and Diagnostics into Plant Data\
+                    \n- Put Signal Logs (3 bars) and game data from Golf and Play Coins in the Recycling\
+                    \n- Put Photos and Videos into the Media folder"                     
 
 
 screen day5Comp_Instructions:
@@ -97,9 +97,10 @@ screen day5Comp_Instructions:
                     \nRef: DefCon3\
                     \nObject: SeekNDest XX/7 \
                     \nProcess: Maintenance Operation 45-/56\
-                    \n1_ \
-                    \n2_\
-                    \n3_"          
+                    \n- Put Calendars, To-Do Lists, Documents and Jeeves Answers into Admin\
+                    \n- Put Graphs and Diagnostics into Plant Data\
+                    \n- Put Sticky Notes in the Recycling\
+                    \n- Put Photos and Videos into the Media folder"          
 
 
 screen day5Helped_Instructions:
