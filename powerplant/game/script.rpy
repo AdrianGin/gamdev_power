@@ -27,8 +27,8 @@ label start:
     call day1
     if player_data.isHelp == True:
         call day5_help
-    call day2
-    #call day3
+    #call day2
+    call day3
 
     return
 
@@ -132,8 +132,8 @@ Cheers"
 
     default day3Complete = False
 
-    $ files = copy.deepcopy(const_l2_files)
-    $ folders = copy.deepcopy(const_l2_folders)
+    $ files = copy.deepcopy(const_l3_files)
+    $ folders = copy.deepcopy(const_l3_files)
 
     while day3Complete == False:
         call screen level1(files, folders)

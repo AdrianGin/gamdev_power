@@ -165,13 +165,47 @@ init -1 python:
 
     File_Diagnostics = DynamicDisplayable(Dyn_File_Diagnostics)
 
-        def Dyn_File_SignalLogL(st, at):
+    def Dyn_File_SignalLogL(st, at):
         if player_data.isLightMode == True:
             return Image("File-SignalLogL-Light.png"), 0.0
         else:
             return Image("File-SignalLogL-Dark.png"), 0.0
 
     File_SignalLogL = DynamicDisplayable(Dyn_File_SignalLogL)
+
+
+    def Dyn_File_SignalLogD(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-SignalLogD-Light.png"), 0.0
+        else:
+            return Image("File-SignalLogD-Dark.png"), 0.0
+
+    File_SignalLogD = DynamicDisplayable(Dyn_File_SignalLogD)
+
+    def Dyn_File_VideoML(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-VideoML-Light.png"), 0.0
+        else:
+            return Image("File-VideoML-Dark.png"), 0.0
+
+    File_VideoML = DynamicDisplayable(Dyn_File_VideoML)
+
+
+    def Dyn_File_VideoDL(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-VideoDL-Light.png"), 0.0
+        else:
+            return Image("File-VideoDL-Dark.png"), 0.0
+
+    File_VideoDL = DynamicDisplayable(Dyn_File_VideoDL)
+
+    def Dyn_File_Map(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-Map-Light.png"), 0.0
+        else:
+            return Image("File-Map-Dark.png"), 0.0
+
+    File_Map = DynamicDisplayable(Dyn_File_Map)
 
     def Dyn_Folder_Admin(st, at):
         if player_data.isLightMode == True:
@@ -196,11 +230,20 @@ init -1 python:
             return Image("Folder-Disk-Light.png"), 0.0
         else:
             return Image("Folder-Disk-Dark.png"), 0.0            
+    Folder_Disk = DynamicDisplayable(Dyn_Folder_Disk)
+
+
+    def Dyn_Folder_Media(st, at):
+        if player_data.isLightMode == True:
+            return Image("Folder-Media-Light.png"), 0.0
+        else:
+            return Image("Folder-Media-Dark.png"), 0.0            
+    Folder_Media = DynamicDisplayable(Dyn_Folder_Media)
 
     Folder_PlantData = DynamicDisplayable(Dyn_Folder_PlantData)
     Folder_Admin = DynamicDisplayable(Dyn_Folder_Admin)
     Folder_BinM = DynamicDisplayable(Dyn_Folder_BinM)
-    Folder_Disk = DynamicDisplayable(Dyn_Folder_Disk)
+
 
 screen level1(files, folders):
     timer 0.1 action Function(PowerTimerCallback, player_data) repeat True
