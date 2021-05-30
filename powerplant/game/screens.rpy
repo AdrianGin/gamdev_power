@@ -77,8 +77,8 @@ style frame:
 
 style terminal_text:
     color "#00ff00"
-    font "cour.ttf"
-    size 16
+    font "Ac437_ToshibaSat_9x14.ttf"
+    size 20
 
 ################################################################################
 ## In-game screens

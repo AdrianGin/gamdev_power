@@ -3,7 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("EMPLOYEE 420205A")
+define Edwy = Character("EMPLOYEE 420205A")
 
 image bg black = "#000000"
 image bg white = "#FFFFFF"
@@ -25,7 +25,12 @@ label start:
     
     # This ends the game.
     call day1
+    call day2
 
+    return
+
+label reset_level:
+    $ player_data.resetPower()
     return
 
 label day1Intro:
@@ -39,6 +44,7 @@ label day1Intro:
 
 
 label day1:
+    call reset_level
     call day1Intro
 
     show screen day1Instructions
@@ -46,36 +52,63 @@ label day1:
     hide screen day1Instructions
 
    # screen button_example
-    default day1Complete = False
+    default dayComplete = False
 
-    $ l1_files = const_l1_files
-    $ l1_folders = const_l1_folders
+    $ files = copy.deepcopy(const_l1_files)
+    $ folders = copy.deepcopy(const_l1_folders)
 
-    while day1Complete == False:
-        call screen level1(l1_files, l1_folders)
+    while dayComplete == False:
+        call screen level1(files, folders)
 
         if _return == Incorrect:
             call InCorrect from _call_InCorrect
         
         if _return == Correct:
             call Correct from _call_Correct
-            "Correct!"
 
-        if len(l1_files) == 0:
-            $ day1Complete = _return
+        if len(files) == 0:
+            $ dayComplete = _return
             jump end1
     
 label end1:
-    "Done!"
     return
 
 label day2:
+    call reset_level
     call day2Intro
     show screen day2Instructions
     pause
     hide screen day2Instructions
 
-    
+    $ player_data.enemyPosition = 99
+
+    Edwy "Hi mate,
+        I don't know if you're using the new dark mode display, but I prefer to call it the new crap mode display.
+        I can barely see any files or folders. I've to switch from dark to bright mode like a maniac if I want to do my daily tasks properly.
+        It's like I'm in a nightclub.
+        Sorry about the mess on the desktop.
+        Cheers"
+
+    default day2Complete = False
+
+    $ files = copy.deepcopy(const_l1_files)
+    $ folders = copy.deepcopy(const_l1_folders)
+
+    while day2Complete == False:
+        call screen level1(files, folders)
+
+        if _return == Incorrect:
+            call InCorrect
+        
+        if _return == Correct:
+            call Correct
+
+        if len(files) == 0:
+            $ day2Complete = _return
+            jump end1
+
+    jump end1
+
 
 label day2Intro:
     play music ["audio/Audio_M_01_State02_Loop.wav"] fadeout 4.0 fadein 4.0
@@ -96,7 +129,16 @@ screen user_interface_health():
             bar:
                 value StaticValue(player_data.availablePower, 100) 
 
+            if player_data.enemyPosition < 100 :
+                null height 10
+                label "Incoming Security Personnel"
+                bar:
+                    value StaticValue(player_data.enemyPosition, 100) 
+
             timer 0.1 action Function(PowerTimerCallback, player_data) repeat True
+            timer 0.5 action Function(EnemyTimerCallback, player_data) repeat True
+
+
 
 screen change_mode():
     default BgCol = 1

@@ -1,7 +1,10 @@
 init python:
+    import copy
+
     Incorrect = 0
     Correct = 1
     Completed = 2
+
 
     def detective_dragged(drags, drop):
 
@@ -19,9 +22,17 @@ init python:
 
     class player:
         def __init__(self):
-            self.availablePower = 10000
             self.meltdownLevel = 0
             self.isLightMode = False
+            self.isEnemyCaptured = False
+
+            self.enemyPosition = 200
+            self.resetPower()
+
+            self.day3helpsCompany = False
+        
+        def resetPower(self):
+            self.availablePower = 100
             
     class drag_context:
         def __init__(self, item, item_list):
@@ -86,15 +97,15 @@ init python:
         const_l1_folders.append( item_location(0, 51,62, Folder_Admin) )
         const_l1_folders.append( item_location(1, 155,62, Folder_PlantData) )
 
-        #const_l1_files.append( item_location(0, 239,234, "File-DocumentM1D.png") )
+        const_l1_files.append( item_location(0, 239,234, File_DocumentM1D) )
         const_l1_files.append( item_location(0, 426,114, File_CalendarDL) )
-        #const_l1_files.append( item_location(0, 492,338, "File-DocumentLL.png") )
+        const_l1_files.append( item_location(0, 492,338, File_DocumentLL) )
         const_l1_files.append( item_location(0, 649,409, File_CalendarLL) )
 
-        #const_l1_files.append( item_location(1, 553,179, "File-GraphM1L.png") )
-        #const_l1_files.append( item_location(1, 632,90, "File-GraphLL.png") )
-        #const_l1_files.append( item_location(1, 729,134, "File-GraphM1L.png") )
-        #const_l1_files.append( item_location(1, 680,242, "File-GraphM1L.png") )
+        const_l1_files.append( item_location(1, 553,179, File_GraphM1L) )
+        const_l1_files.append( item_location(1, 632,90, File_GraphLL) )
+        const_l1_files.append( item_location(1, 729,134, File_GraphM1L) )
+        const_l1_files.append( item_location(1, 680,242, File_GraphM1L) )
 
 
     def initPlayer():
@@ -113,9 +124,16 @@ init python:
             if context.availablePower <= 0 :
                 context.isLightMode = False
                 renpy.play("audio/Audio_SFX_UI_Shutdown_01.wav")
-
-
         pass
+
+
+    def EnemyTimerCallback(context):
+        if context.enemyPosition != 100:
+            context.enemyPosition = context.enemyPosition - 1
+            #if context.enemyPosition <= 0 :
+             #   context.isLightMode = False
+                #renpy.play("audio/Audio_SFX_UI_Shutdown_01.wav")
+        pass        
 
     def periodic_callback():
         for i, timer in enumerate(timers):

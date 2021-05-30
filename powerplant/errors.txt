@@ -2,10 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/level1.rpy", line 14: invalid syntax
-    def File-CalendarDL(st, at):
-             ^
+File "game/script.rpy", line 57: invalid syntax
+    l1_files = copy.deepcopy(old_list) const_l1_files.copy()
+                                                     ^
     
 
 Ren'Py Version: Ren'Py 7.4.5.1648
-Sun May 30 13:18:08 2021
+Sun May 30 14:03:20 2021

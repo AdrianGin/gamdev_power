@@ -30,6 +30,92 @@ init -1 python:
         else:
             return Image("File-CalendarM1L-Dark.png"), 0.0                   
 
+
+    File_CalendarDL = DynamicDisplayable(Dyn_File_CalendarDL)
+    File_CalendarLL = DynamicDisplayable(Dyn_File_CalendarLL)
+    File_CalendarM1L = DynamicDisplayable(Dyn_File_CalendarM1L)
+
+
+    def Dyn_File_GraphDL(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-GraphDL-Light.png"), 0.0
+        else:
+            return Image("File-GraphDL-Dark.png"), 0.0
+
+    def Dyn_File_GraphLD(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-GraphLD-Light.png"), 0.0
+        else:
+            return Image("File-GraphLD-Dark.png"), 0.0
+
+    def Dyn_File_GraphLL(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-GraphLL-Light.png"), 0.0
+        else:
+            return Image("File-GraphLL-Dark.png"), 0.0       
+
+    def Dyn_File_GraphM1L(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-GraphM1L-Light.png"), 0.0
+        else:
+            return Image("File-GraphM1L-Dark.png"), 0.0      
+
+
+    def Dyn_File_GraphM2D(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-GraphM2D-Light.png"), 0.0
+        else:
+            return Image("File-GraphM2D-Dark.png"), 0.0    
+
+    File_GraphDL = DynamicDisplayable(Dyn_File_GraphDL)
+    File_GraphLL = DynamicDisplayable(Dyn_File_GraphLL)
+    File_GraphLD = DynamicDisplayable(Dyn_File_GraphLD)
+    File_GraphM1L = DynamicDisplayable(Dyn_File_GraphM1L)
+    File_GraphM2D = DynamicDisplayable(Dyn_File_GraphM2D)
+
+    def Dyn_File_DocumentDL(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-DocumentDL-Light.png"), 0.0
+        else:
+            return Image("File-DocumentDL-Dark.png"), 0.0
+
+
+    def Dyn_File_DocumentLL(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-DocumentLL-Light.png"), 0.0
+        else:
+            return Image("File-DocumentLL-Dark.png"), 0.0       
+
+    def Dyn_File_DocumentM1D(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-DocumentM1D-Light.png"), 0.0
+        else:
+            return Image("File-DocumentM1D-Dark.png"), 0.0      
+
+
+    File_DocumentDL = DynamicDisplayable(Dyn_File_DocumentDL)
+    File_DocumentLL = DynamicDisplayable(Dyn_File_DocumentLL)
+    File_DocumentM1D = DynamicDisplayable(Dyn_File_DocumentM1D)
+
+
+    def Dyn_File_ToDoD(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-ToDoD-Light.png"), 0.0
+        else:
+            return Image("File-ToDoD-Dark.png"), 0.0
+
+
+    def Dyn_File_ToDoL(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-ToDoL-Light.png"), 0.0
+        else:
+            return Image("File-ToDoL-Dark.png"), 0.0
+
+    File_ToDoD = DynamicDisplayable(Dyn_File_ToDoD)
+    File_ToDoL = DynamicDisplayable(Dyn_File_ToDoL)
+
+
+
     def Dyn_Folder_Admin(st, at):
         if player_data.isLightMode == True:
             return Image("Folder-Admin.png"), 0.0
@@ -41,12 +127,6 @@ init -1 python:
             return Image("Folder-PlantData-Light.png"), 0.0
         else:
             return Image("Folder-PlantData-Dark.png"), 0.0
-
-
-
-    File_CalendarDL = DynamicDisplayable(Dyn_File_CalendarDL)
-    File_CalendarLL = DynamicDisplayable(Dyn_File_CalendarLL)
-    File_CalendarM1L = DynamicDisplayable(Dyn_File_CalendarM1L)
 
     Folder_PlantData = DynamicDisplayable(Dyn_Folder_PlantData)
     Folder_Admin = DynamicDisplayable(Dyn_Folder_Admin)
