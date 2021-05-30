@@ -1,13 +1,13 @@
-Sun May 30 14:07:28 2021
+Sun May 30 14:39:14 2021
 Windows-10-10.0.19041
 Ren'Py 7.4.5.1648
  
 
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
-Loader init took 0.01s
+Loader init took 0.02s
 Loading error handling took 0.02s
-Loading script took 0.16s
+Loading script took 0.23s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
@@ -15,10 +15,11 @@ Running init code took 0.05s
 Loading analysis data took 0.04s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.05s
+Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
+Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.04s
+Initial gc. took 0.03s
 DPI scale factor: 1.750000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: 'Initialize() = -6.' (can be ignored)
@@ -26,12 +27,12 @@ Creating interface object took 0.01s
 Cleaning stores took 0.00s
 Init translation took 0.04s
 Build styles took 0.00s
-Load screen analysis took 0.11s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.05s
 Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
+Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
 Interface start took 1.51s
@@ -46,11 +47,110 @@ Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
 Display Info: None
 Screen sizes: virtual=(1024, 768) physical=(1533, 1150) drawable=(1533, 1150)
 Maximum texture size: 4096x4096
-Total time until interface ready: 2.68138599396s
+Total time until interface ready: 2.70243597031s
+
+Full traceback:
+  File "game/script.rpy", line 14, in script
+    python:
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 15, in <module>
+    initGame()
+  File "game/draggables.rpy", line 83, in initGame
+    initLevels()
+  File "game/draggables.rpy", line 90, in initLevels
+    initLevel2()
+  File "game/draggables.rpy", line 118, in initLevel2
+    const_l2_folders.append( item_location(0, 51,62, Folder-Admin) )
+NameError: global name 'Folder' is not defined
+
+While running game code:
+  File "game/script.rpy", line 14, in script
+    python:
+  File "game/script.rpy", line 15, in <module>
+    initGame()
+  File "game/draggables.rpy", line 83, in initGame
+    initLevels()
+  File "game/draggables.rpy", line 90, in initLevels
+    initLevel2()
+  File "game/draggables.rpy", line 118, in initLevel2
+    const_l2_folders.append( item_location(0, 51,62, Folder-Admin) )
+NameError: global name 'Folder' is not defined
+Resetting cache.
+Bootstrap to the start of init.init took 13.65s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.09s
+Loading save slot metadata. took 0.01s
+Loading persistent took 0.00s
+Importing _renpysteam: ImportError('No module named _renpysteam',)
+Running init code took 0.04s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to 'C:\\Users\\Adrian\\AppData\\Roaming/RenPy/backups\\powerplant':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.750000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: 'Initialize() = -6.' (can be ignored)
+Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.00s
+Init translation took 0.05s
 Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.00s
-Prepare screens took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.06s
+Prepare screens took 0.05s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.01s
 Running _start took 0.00s
+Performance test:
+Interface start took 0.05s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3840, 2160)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'ATI Technologies Inc.'
+Renderer: 'Radeon RX 570 Series'
+Version: '4.6.14736 Compatibility Profile Context 20.10.1 27.20.12033.1007'
+Display Info: None
+Screen sizes: virtual=(1024, 768) physical=(1533, 1150) drawable=(1533, 1150)
+Maximum texture size: 4096x4096
+Total time until interface ready: 14.2509961128s
+
+Full traceback:
+  File "game/script.rpy", line 14, in script
+    python:
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 15, in <module>
+    initGame()
+  File "game/draggables.rpy", line 83, in initGame
+    initLevels()
+  File "game/draggables.rpy", line 90, in initLevels
+    initLevel2()
+  File "game/draggables.rpy", line 120, in initLevel2
+    const_l2_folders.append( item_location(2, 51,413, Folder_BinM) )
+NameError: global name 'Folder_BinM' is not defined
+
+While running game code:
+  File "game/script.rpy", line 14, in script
+    python:
+  File "game/script.rpy", line 15, in <module>
+    initGame()
+  File "game/draggables.rpy", line 83, in initGame
+    initLevels()
+  File "game/draggables.rpy", line 90, in initLevels
+    initLevel2()
+  File "game/draggables.rpy", line 120, in initLevel2
+    const_l2_folders.append( item_location(2, 51,413, Folder_BinM) )
+NameError: global name 'Folder_BinM' is not defined

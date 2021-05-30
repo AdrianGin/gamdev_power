@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 57: invalid syntax
-    l1_files = copy.deepcopy(old_list) const_l1_files.copy()
-                                                     ^
-    
+The label day5Intro is defined twice, at
+  File "game/day5.rpy", line 33 and
+  File "game/day5.rpy", line 81.
 
 Ren'Py Version: Ren'Py 7.4.5.1648
-Sun May 30 14:03:20 2021
+Sun May 30 14:32:01 2021

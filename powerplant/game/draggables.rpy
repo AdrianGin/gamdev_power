@@ -72,6 +72,8 @@ init python:
 init python:
     const_l1_files = []
     const_l1_folders = []
+    const_l2_files = []
+    const_l2_folders = []
 
     timers = []
     player_data = player()
@@ -85,7 +87,7 @@ init python:
     def initLevels():
 
         initLevel1()
-
+        initLevel2()
         return
 
     def initLevel1():
@@ -107,6 +109,31 @@ init python:
         const_l1_files.append( item_location(1, 729,134, File_GraphM1L) )
         const_l1_files.append( item_location(1, 680,242, File_GraphM1L) )
 
+    def initLevel2():
+        global const_l2_files
+        global const_l2_folders
+        const_l2_files.clear()
+        const_l2_folders.clear()
+
+        const_l2_folders.append( item_location(0, 51,62, Folder_Admin) )
+        const_l2_folders.append( item_location(1, 155,62, Folder_PlantData) )
+        const_l2_folders.append( item_location(2, 51,413, Folder_BinM) )
+
+        const_l2_files.append( item_location(2, 287,144, File_StickynoteDD) )
+        const_l2_files.append( item_location(1, 429,80, File_GraphLD) )
+        const_l2_files.append( item_location(0, 552,55, File_CalendarLL) )
+        const_l2_files.append( item_location(0, 576,144, File_DocumentLD) )
+        const_l2_files.append( item_location(1, 678,164, File_GraphDL) )
+        const_l2_files.append( item_location(2, 488,218, File_StickyNoteDD) )
+        const_l2_files.append( item_location(1, 265,268, File_GraphDL) )
+        const_l2_files.append( item_location(0, 530,354, File_ToDoL) )
+        const_l2_files.append( item_location(0, 389,300, File_ToDoD) )
+        const_l2_files.append( item_location(0, 119,289, File_CalendarLL) )
+        const_l2_files.append( item_location(1, 233,413, File_GraphM2D) )
+        const_l2_files.append( item_location(0, 453,419, File_DocumentDL) )
+        const_l2_files.append( item_location(2, 623,433, File_StickyNoteM1D) )
+        const_l2_files.append( item_location(1, 708,236, File_ToDoD) )
+        const_l2_files.append( item_location(0, 689,330, File_DocumentLD) )
 
     def initPlayer():
         global player_data

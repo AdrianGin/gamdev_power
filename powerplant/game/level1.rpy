@@ -114,6 +114,24 @@ init -1 python:
     File_ToDoD = DynamicDisplayable(Dyn_File_ToDoD)
     File_ToDoL = DynamicDisplayable(Dyn_File_ToDoL)
 
+    def Dyn_File_StickyNoteDD(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-StickyNoteDD-Light.png"), 0.0
+        else:
+            return Image("File-StickyNoteDD-Dark.png"), 0.0
+
+ 
+
+    def Dyn_File_StickyNoteM1D(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-StickyNoteM1D-Light.png"), 0.0
+        else:
+            return Image("File-StickyNoteM1D-Dark.png"), 0.0                   
+
+
+    File_StickyNoteDD = DynamicDisplayable(Dyn_File_StickyNoteDD)
+    File_StickyNoteM1D = DynamicDisplayable(Dyn_File_StickyNoteM1D)
+
 
 
     def Dyn_Folder_Admin(st, at):

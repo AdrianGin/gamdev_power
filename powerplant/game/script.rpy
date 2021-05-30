@@ -80,8 +80,6 @@ label day2:
     pause
     hide screen day2Instructions
 
-    $ player_data.enemyPosition = 99
-
     Edwy "Hi mate,
         I don't know if you're using the new dark mode display, but I prefer to call it the new crap mode display.
         I can barely see any files or folders. I've to switch from dark to bright mode like a maniac if I want to do my daily tasks properly.
@@ -91,8 +89,8 @@ label day2:
 
     default day2Complete = False
 
-    $ files = copy.deepcopy(const_l1_files)
-    $ folders = copy.deepcopy(const_l1_folders)
+    $ files = copy.deepcopy(const_l2_files)
+    $ folders = copy.deepcopy(const_l2_folders)
 
     while day2Complete == False:
         call screen level1(files, folders)
@@ -113,6 +111,49 @@ label day2:
 label day2Intro:
     play music ["audio/Audio_M_01_State02_Loop.wav"] fadeout 4.0 fadein 4.0
     return   
+
+
+label day3:
+    call reset_level
+    call day3Intro
+    show screen day3Instructions
+    pause
+    hide screen day3Instructions
+
+
+    Edwy "Hi mate,
+Aren't you tired of dragging and dropping?
+I've discovered a path to make things more interesting for us.
+What I need are the confidential files. Save them to disk and I'll collect it later
+Cheers"
+
+    default day3Complete = False
+
+    $ files = copy.deepcopy(const_l2_files)
+    $ folders = copy.deepcopy(const_l2_folders)
+
+    while day3Complete == False:
+        call screen level1(files, folders)
+
+        if _return == Incorrect:
+            call InCorrect
+        
+        if _return == Correct:
+            call Correct
+
+        if len(files) == 0:
+            $ day3Complete = _return
+            jump end1
+
+    jump end1
+
+
+label day3Intro:
+    play music ["audio/Audio_M_01_State03_Loop.wav"] fadeout 4.0 fadein 4.0
+    return   
+
+
+
 
 screen user_interface_health():
     frame:
