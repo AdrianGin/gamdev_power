@@ -1,23 +1,23 @@
 label day5_comp:
-    call reset_level
-    call day5Intro
+    call reset_level from _call_reset_level
+    call day5Intro from _call_day5Intro
     show screen day5Comp_Instructions
     pause
     hide screen day5Comp_Instructions
 
     default day5Complete = False
 
-    $ files = copy.deepcopy(const_l2_files)
-    $ folders = copy.deepcopy(const_l2_folders)
+    $ files = copy.deepcopy(const_l5_files)
+    $ folders = copy.deepcopy(const_l5_folders)
 
     while day5Complete == False:
         call screen level1(files, folders)
 
         if _return == Incorrect:
-            call InCorrect
+            call InCorrect from _call_InCorrect_1
         
         if _return == Correct:
-            call Correct
+            call Correct from _call_Correct_1
 
         if len(files) == 0:
             $ day3Complete = _return
@@ -36,9 +36,9 @@ label day5Intro:
 
 label day5_help:
     
-    call reset_level
+    call reset_level from _call_reset_level_1
 
-    call day5Intro_help
+    call day5Intro_help from _call_day5Intro_help
 
     show screen day5Helped_Instructions
     pause
@@ -46,30 +46,29 @@ label day5_help:
 
     Edwy "Hi mate,
         When you will read this I'll already be far away.
-        The security unit are closing in on your position.
-        Thanks for all.
+        \nThe security unit are closing in on your position. Thanks for all.
 
-        Oh I nearly forgot.. run through this sequence and we'll both be free:
-            Save the Map and Secrets.
-            Place everything into the bin
+        \nOh I nearly forgot.. run through this sequence and we'll both be free:
+        \nSave the Map and Secrets.
+        \nPlace everything into the bin.
 
-        Edwy"
+        \nEdwy"
 
     default day5_helpComplete = False
     
     $ player_data.enemyTimerStarted = True
 
-    $ files = copy.deepcopy(const_l2_files)
-    $ folders = copy.deepcopy(const_l2_folders)
+    $ files = copy.deepcopy(const_l5_files)
+    $ folders = copy.deepcopy(const_l5_folders)
 
     while day5_helpComplete == False:
         call screen level1(files, folders)
 
         if _return == Incorrect:
-            call InCorrect
+            call InCorrect from _call_InCorrect_2
         
         if _return == Correct:
-            call Correct
+            call Correct from _call_Correct_2
 
         if len(files) == 0:
             $ day5_helpComplete = _return

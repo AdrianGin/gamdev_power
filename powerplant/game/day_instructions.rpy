@@ -116,4 +116,18 @@ screen day5Helped_Instructions:
 \n- - - YOUR COLLEAGUES OF THE C.S.S.D.U (CENTRAL SERVICES SEEK AND DESTROY UNIT) WILL ARRIVE SOON - - -\
 \n- - - DO NOT EXECUTE ANY PROCESS - - -"
 
-                                    
+screen reactorBlow:
+    frame:
+        yfill True
+        xfill True
+        background "#000000"
+        xalign 0.0 ypos 50
+        vbox:
+            style_prefix "terminal"
+            text   "- - - ALL STAFF - - -\
+\n- - - ***REACTOR MELTDOWN*** - - -\
+\n- - - ***EVACUATE IMMEDIATELY***- - -\
+\n- - - ***50 MILE RADIUS EXPLOSION IMMINENT*** - - -\
+\n- - - ***EVACUATE IMMEDIATELY*** - - -"
+
+                                                                        

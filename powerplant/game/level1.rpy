@@ -207,6 +207,14 @@ init -1 python:
 
     File_Map = DynamicDisplayable(Dyn_File_Map)
 
+    def Dyn_File_Script(st, at):
+        if player_data.isLightMode == True:
+            return Image("File-Script-Light.png"), 0.0
+        else:
+            return Image("File-Script-Dark.png"), 0.0
+
+    File_Script = DynamicDisplayable(Dyn_File_Script)
+
     def Dyn_Folder_Admin(st, at):
         if player_data.isLightMode == True:
             return Image("Folder-Admin.png"), 0.0

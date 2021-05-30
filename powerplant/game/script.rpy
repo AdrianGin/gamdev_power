@@ -24,11 +24,13 @@ label start:
     show screen user_interface_health
     
     # This ends the game.
-    call day1
+    #call day1 from _call_day1
+    #call day2 from _call_day2
+    call day3 from _call_day3
     if player_data.isHelp == True:
-        call day5_help
-    #call day2
-    call day3
+        call day5_help from _call_day5_help
+    else:
+        call day5_comp
 
     return
 
@@ -47,8 +49,8 @@ label day1Intro:
 
 
 label day1:
-    call reset_level
-    call day1Intro
+    call reset_level from _call_reset_level_2
+    call day1Intro from _call_day1Intro
 
     show screen day1Instructions
     pause
@@ -69,7 +71,7 @@ label day1:
         if _return == Correct:
             call Correct from _call_Correct
 
-        if len(files) == 0:
+        if AreFilesAllMoved(files) == 0:
             $ dayComplete = _return
             jump end1
     
@@ -77,8 +79,8 @@ label end1:
     return
 
 label day2:
-    call reset_level
-    call day2Intro
+    call reset_level from _call_reset_level_3
+    call day2Intro from _call_day2Intro
     show screen day2Instructions
     pause
     hide screen day2Instructions
@@ -99,12 +101,12 @@ label day2:
         call screen level1(files, folders)
 
         if _return == Incorrect:
-            call InCorrect
+            call InCorrect from _call_InCorrect_3
         
         if _return == Correct:
-            call Correct
+            call Correct from _call_Correct_3
 
-        if len(files) == 0:
+        if AreFilesAllMoved(files) == 0:
             $ day2Complete = _return
             jump end1
 
@@ -117,8 +119,8 @@ label day2Intro:
 
 
 label day3:
-    call reset_level
-    call day3Intro
+    call reset_level from _call_reset_level_4
+    call day3Intro from _call_day3Intro
     show screen day3Instructions
     pause
     hide screen day3Instructions
@@ -133,30 +135,44 @@ Cheers"
     default day3Complete = False
 
     $ files = copy.deepcopy(const_l3_files)
-    $ folders = copy.deepcopy(const_l3_files)
+    $ folders = copy.deepcopy(const_l3_folders)
 
     while day3Complete == False:
         call screen level1(files, folders)
 
         if _return == Incorrect:
-            call InCorrect
+            call InCorrect from _call_InCorrect_4
         
         if _return == Correct:
-            call Correct
+            call Correct from _call_Correct_4
 
-        if len(files) == 0:
+        call doFailCheck
+        
+        if CountOptionalFiles(files) == 0:
+            $ player_data.isHelp = True
+
+        if AreFilesAllMoved(files) == 0:
             $ day3Complete = _return
-            jump end1
+            jump end3
 
-    jump end1
 
+
+    jump end3
+    return
+
+label end3:
+    return
 
 label day3Intro:
     play music ["audio/Audio_M_01_State03_Loop.wav"] fadeout 4.0 fadein 4.0
     return   
 
 
+label doFailCheck:
+    if player_data.meltdownLevel > 100:
+        show screen reactorBlow
 
+    return
 
 screen user_interface_health():
     frame:
@@ -182,7 +198,7 @@ screen user_interface_health():
             timer 0.1 action Function(PowerTimerCallback, player_data) repeat True
             timer 0.5 action Function(EnemyTimerCallback, player_data) repeat True
 
-
+            timer 6.0 action Function(SoundCheckCallback, player_data) repeat True
 
 screen change_mode():
     default BgCol = 1
