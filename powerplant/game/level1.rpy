@@ -159,9 +159,6 @@ screen level1(files, folders):
         for i, file in enumerate(files):
             $ global fileContext
             $ fileContext = drag_context(file, files)
-            default type = file.type2
-           # if player_data.isLightMode == True and file.type2 != "" :
-           #     $ type = file.type2
 
             drag:
                 drag_handle (0, 0, 1.0, 1.0)

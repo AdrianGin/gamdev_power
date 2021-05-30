@@ -18,6 +18,10 @@ init python:
             return Incorrect
 
         drags[0].drag_name.item_list.remove(drags[0].drag_name.item)
+
+        if drags[0].drag_name.item.help == True :
+            player_data.isHelp = True
+
         return Correct
 
     class player:
@@ -30,7 +34,7 @@ init python:
             self.resetPower()
 
             self.enemyTimerStarted = False
-            self.day3helpsCompany = False
+            self.isHelp = False
         
         def resetPower(self):
             self.availablePower = 10000
@@ -96,7 +100,7 @@ init python:
         const_l1_folders.append( item_location(1, 155,62, Folder_PlantData) )
 
         const_l1_files.append( item_location(0, 239,234, File_DocumentM1D) )
-        const_l1_files.append( item_location(0, 426,114, File_CalendarDL) )
+        const_l1_files.append( item_location(0, 426,114, File_CalendarDL, True) )
         const_l1_files.append( item_location(0, 492,338, File_DocumentLL) )
         const_l1_files.append( item_location(0, 649,409, File_CalendarLL) )
 

@@ -24,10 +24,11 @@ label start:
     show screen user_interface_health
     
     # This ends the game.
-    #call day1
+    call day1
+   # if player_data.isHelp == True:
+   #     call day5_help
     #call day2
     #call day3
-    call day5_help
 
     return
 
